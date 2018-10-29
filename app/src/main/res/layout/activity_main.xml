@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@drawable/img_background">
+
+
+    <TextView
+        android:id="@+id/tv_QuanLyHocSinh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="QUẢN LÝ HỌC SINH"
+        android:textAlignment="center"
+        android:textSize="35dp"
+        android:layout_marginTop="75dp"
+        android:drawableTop="@drawable/ic_studentmanagement"/>
+
+    <EditText
+        android:id="@+id/edt_TenDangNhap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:hint=" Tên đăng nhập"
+        android:inputType="textPersonName"
+        android:layout_marginLeft="85dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="50dp"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/ic_user"
+        android:drawableStart="@drawable/ic_user"/>
+
+    <EditText
+        android:id="@+id/edt_MatKhau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:hint=" Mật khẩu"
+        android:layout_marginLeft="85dp"
+        android:inputType="textPassword"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/ic_password"
+        android:drawableStart="@drawable/ic_password"/>
+
+    <Button
+        android:id="@+id/btn_DangNhap"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="20dp"
+        android:text="ĐĂNG NHẬP" />
+
+
+</LinearLayout>
