@@ -53,7 +53,6 @@
         android:layout_height="50dp"
         android:layout_marginLeft="110dp"
         android:layout_marginTop="20dp"
-        android:text="ĐĂNG NHẬP" />
-
+        android:text="ĐĂNG NHẬP"/>
 
 </LinearLayout>
