@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="196dp"
+        android:layout_gravity="center"
+        android:layout_margin="80dp"
+        android:orientation="vertical">
+
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TableRow>
+
+
+                <TextViewt
+                    android:id="@+id/txtclass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_span="3"
+
+                    ></TextViewt>
+
+            </TableRow>
+
+            <TableRow>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_margin="6dp"
+                    android:src="@drawable/ic_siso" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sĩ số học sinh: "
+                    />
+
+                <EditText
+                    android:id="@+id/txtdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="16"
+
+                    android:inputType="text">
+
+                    <requestFocus />
+                </EditText>
+
+                <EditText
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="16"
+                    android:inputType="text">
+
+                    <requestFocus />
+                </EditText>
+            </TableRow>
+
+            <TableRow>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_margin="6dp"
+                    android:src="@drawable/ic_sisonam" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sĩ số Nam: "
+                    />
+
+                <EditText
+                    android:id="@+id/txtgt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="16"
+                    android:inputType="text">
+                    <requestFocus />
+                </EditText>
+
+
+                <EditText
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="16"
+
+                    android:inputType="text">
+
+                    <requestFocus />
+                </EditText>
+            </TableRow>
+
+            <TableRow>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_margin="6dp"
+                    android:src="@drawable/ic_sisonu" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sĩ số Nữ: "
+                    />
+
+                <EditText
+                    android:id="@+id/txtmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="16"
+
+                    android:inputType="text"></EditText>
+
+
+                <EditText
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="16"
+
+                    android:inputType="text">
+
+                    <requestFocus />
+                </EditText>
+
+                <requestFocus />
+            </TableRow>
+
+
+        </TableLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="60dp">
+
+        <Button
+            android:id="@+id/btnLogin"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#f8f8f8"
+            android:gravity="center"
+            android:text="Xem Bang diem"
+
+            />
+
+        <Button
+            android:id="@+id/btnLo"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#f8f8f8"
+            android:gravity="center"
+            android:text="Xem Bang diem"
+            android:layout_marginLeft="40dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
