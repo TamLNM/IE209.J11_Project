@@ -36,9 +36,9 @@ public class MH_DanhSachLop extends  AppCompatActivity {
     private void initView ()
    {
       vp = (ViewPager) findViewById(R.id.vp_lop_hocsinh);
-     vp.setAdapter(new MyAdapter(getSupportFragmentManager()));
-     TabLayout tabLayout = (TabLayout) findViewById(R.id.tl_lop_hocsinh);
-      tabLayout.setupWithViewPager(vp);
+       vp.setAdapter(new MyAdapter(getSupportFragmentManager()));
+       TabLayout tabLayout = (TabLayout) findViewById(R.id.tl_lop_hocsinh);
+       tabLayout.setupWithViewPager(vp);
    }
 
 
@@ -56,8 +56,9 @@ public class MH_DanhSachLop extends  AppCompatActivity {
 
     private void initBnbDefault() {
         mBnbDefaultList = new ArrayList<>();
-        tabLayout = (android.support.design.widget.TabLayout) findViewById(R.id.tl_lop_hocsinh);
-        viewPager = (android.support.v4.view.ViewPager) findViewById(R.id.vp_lop_hocsinh);
+
+        //tabLayout = (android.support.design.widget.TabLayout) findViewById(R.id.tl_lop_hocsinh);
+        //viewPager = (android.support.v4.view.ViewPager) findViewById(R.id.vp_lop_hocsinh);
 
        BottomNavigationBar mBnbDefault = (BottomNavigationBar) findViewById(R.id.bottom_navigation);
        mBnbDefault.addOnSelectedListener(new BottomNavigationBar.OnSelectedListener() {
