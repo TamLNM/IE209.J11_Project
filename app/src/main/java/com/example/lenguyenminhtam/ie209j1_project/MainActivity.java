@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
                 navigateToDanhSachLop();
             }
         });
+
     }
 
     public void navigateToDanhSachLop(){

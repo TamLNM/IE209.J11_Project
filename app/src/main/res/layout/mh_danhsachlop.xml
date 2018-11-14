@@ -6,19 +6,39 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MH_DanhSachLop"
-    android:background="#f5f5f5">
+    android:background="#f5f5f5"
+    android:id="@+id/mh_dsl">
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tl_lop_hocsinh"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#003e52"
-        app:tabMode="fixed"
-        app:tabTextColor="#ffffff"
-        app:tabIndicatorColor="#ffffff"/>
+        android:layout_height="250dp"
+        android:layout_weight="3"
+        android:background="#EEEEEE">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp_lop_hocsinh"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tl_lop_hocsinh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#003e52"
+                app:tabMode="fixed"
+                app:tabTextColor="#ffffff"
+                app:tabIndicatorColor="#ffffff"/>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp_lop_hocsinh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+    </RelativeLayout>
+
+    ///navigation
+        <com.vincent.bottomnavigationbar.BottomNavigationBar
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            />
+
 </LinearLayout>
