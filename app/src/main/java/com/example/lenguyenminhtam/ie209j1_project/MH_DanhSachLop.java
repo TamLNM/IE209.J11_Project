@@ -1,6 +1,7 @@
 package com.example.lenguyenminhtam.ie209j1_project;
 
 import android.content.ClipData;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -35,7 +36,7 @@ public class MH_DanhSachLop extends  AppCompatActivity {
 
     private void initView ()
    {
-      vp = (ViewPager) findViewById(R.id.vp_lop_hocsinh);
+       vp = (ViewPager) findViewById(R.id.vp_lop_hocsinh);
        vp.setAdapter(new MyAdapter(getSupportFragmentManager()));
        TabLayout tabLayout = (TabLayout) findViewById(R.id.tl_lop_hocsinh);
        tabLayout.setupWithViewPager(vp);
@@ -44,7 +45,7 @@ public class MH_DanhSachLop extends  AppCompatActivity {
 
     ///Bottom_Navigation
     private String mPackageName;
-    private  android.support.design.widget.TabLayout tabLayout;
+    private android.support.design.widget.TabLayout tabLayout;
     private android.support.v4.view.ViewPager viewPager;
     private List<BottomItem> mBnbDefaultList;
     @Override
@@ -64,15 +65,14 @@ public class MH_DanhSachLop extends  AppCompatActivity {
        mBnbDefault.addOnSelectedListener(new BottomNavigationBar.OnSelectedListener() {
           @Override
            public void OnSelected(int oldPosition, int newPosition) {
-               ///xử lý sự kiện click;
-
+               // Xử lý sự kiện click
           }
         }
         );
 
        ////Thêm item vào navigation;
         BottomItem item1 = new BottomItem();
-        item1.setText("Home");
+        item1.setText("Trang chủ");
         item1.setIconResID(getResources().getIdentifier("ic_home", "drawable", mPackageName));
         item1.setActiveBgResID(R.drawable.bg_bottom_navi_selected);
         item1.setInactiveBgResID(R.drawable.bg_bottom_navi_normal);
@@ -80,7 +80,7 @@ public class MH_DanhSachLop extends  AppCompatActivity {
         mBnbDefaultList.add(item1);
 
         BottomItem item2 = new BottomItem();
-        item2.setText("Thêm học sinh");
+        item2.setText("Thêm mới");
         item2.setIconResID(getResources().getIdentifier("ic_person_add", "drawable", mPackageName));
         item2.setActiveBgResID(R.drawable.bg_bottom_navi_selected);
         item2.setInactiveBgResID(R.drawable.bg_bottom_navi_normal);

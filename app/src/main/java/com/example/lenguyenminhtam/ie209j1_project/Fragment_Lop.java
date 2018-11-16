@@ -35,7 +35,7 @@ public class Fragment_Lop extends Fragment{
         mListFace.add(new Face("10A2", 80, 40,40));
 
         // Create adapter
-        mAdapter = new FaceAdapter(mListFace);
+        mAdapter = new FaceAdapter(mListFace, getContext());
         mRrvFace.setAdapter(mAdapter);
         //mRrvFace.setItemAnimator(new DefaultItemAnimator());
 
