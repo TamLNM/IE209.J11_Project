@@ -30,8 +30,7 @@ public class MH_DanhSachLop extends  AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mh_danhsachlop);
-       initView();
-
+        initView();
     }
 
     private void initView ()

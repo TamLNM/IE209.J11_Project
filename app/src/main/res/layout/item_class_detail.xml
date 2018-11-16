@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="400dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5f5f5"
+        android:gravity="center_horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_tenlop_detailscreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="10A1"
+            android:textStyle="bold"
+            android:layout_marginTop="0dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="#003e52"
+            android:textColor="#ffffff"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:id="@+id/tv_siso_detailscreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_siso"
+            android:textSize="18dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:layout_gravity="left"
+            android:paddingLeft="125dp"
+            android:text="Sỉ số: 100"/>
+
+        <TextView
+            android:id="@+id/tv_sisonam_detailscreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_sisonam"
+            android:textSize="18dp"
+            android:paddingBottom="5dp"
+            android:layout_gravity="left"
+            android:paddingLeft="125dp"
+            android:text="Nam: 40"/>
+
+        <TextView
+            android:id="@+id/tv_sisonu_detailscreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_sisonu"
+            android:textSize="18dp"
+            android:paddingBottom="15dp"
+            android:layout_gravity="left"
+            android:paddingLeft="125dp"
+            android:text="Nữ: 40"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <Button
+                android:id="@+id/btn_danhsachlop"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#003e52"
+                android:textColor="#ffffff"
+                android:text="DANH SÁCH LỚP"/>
+
+            <Button
+                android:id="@+id/btn_bangdiemlop"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textAlignment="center"
+                android:background="#003e52"
+                android:textColor="#ffffff"
+                android:text="Bảng điểm lớp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

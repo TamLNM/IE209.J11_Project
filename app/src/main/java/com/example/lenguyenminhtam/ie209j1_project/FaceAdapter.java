@@ -1,5 +1,6 @@
 package com.example.lenguyenminhtam.ie209j1_project;
 
+import android.app.Dialog;
 import android.content.ClipData;
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -7,8 +8,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -16,6 +20,8 @@ public class FaceAdapter extends RecyclerView.Adapter<FaceAdapter.ViewHolder>
 {
     private List<Face> mListFace;
     private Context    context;
+
+    Dialog myClassInfoDialog;
 
     // Constructer
     public FaceAdapter() {
@@ -40,13 +46,28 @@ public class FaceAdapter extends RecyclerView.Adapter<FaceAdapter.ViewHolder>
         viewHolder.tvTenLop.setText(face.getTenLop());
         viewHolder.tvSiSo.setText("" + face.getSiSo());
         viewHolder.tvSiSoNam.setText("" + face.getSiSoNam());
-        viewHolder.tvSiSoNu.setText(""+ face.getSiSoNu());
+        viewHolder.tvSiSoNu.setText("" + face.getSiSoNu());
+
+        // Init child dialog (detail class info)
+        myClassInfoDialog = new Dialog(context);
+        myClassInfoDialog.setContentView(R.layout.item_class_detail);
+
+        TextView tv_tenlop_detailscreen  = myClassInfoDialog.findViewById(R.id.tv_tenlop_detailscreen);
+        TextView tv_siso_detailscreen    = myClassInfoDialog.findViewById(R.id.tv_siso_detailscreen);
+        TextView tv_sisonam_detailscreen = myClassInfoDialog.findViewById(R.id.tv_sisonam_detailscreen);
+        TextView tv_sisonu_detailscreen  = myClassInfoDialog.findViewById(R.id.tv_sisonu_detailscreen);
+        tv_tenlop_detailscreen.setText(face.getTenLop());
+        tv_siso_detailscreen.setText("Sỉ số: "+ face.getSiSo());
+        tv_sisonam_detailscreen.setText("Nam: "+ face.getSiSoNam());
+        tv_sisonu_detailscreen.setText("Nữ: "+ face.getSiSoNu());
 
         // Set event reclycler view onClick()
         viewHolder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position, boolean isLongClick) {
-                Toast.makeText(context, "ABC", Toast.LENGTH_SHORT).show();
+                myClassInfoDialog.show();
+
+                Button btnBangDiemLop = myClassInfoDialog.findViewById(R.id.btn_xembangdiem);
             }
         });
     }
