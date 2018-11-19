@@ -9,7 +9,7 @@
     android:background="#f5f5f5"
     android:id="@+id/mh_dsl">
 
-            ///Tab
+
             <android.support.design.widget.TabLayout
                 android:id="@+id/tl_lop_hocsinh"
                 android:layout_width="match_parent"
@@ -30,11 +30,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
+                            android:layout_alignParentLeft="true"
                             android:layout_alignParentTop="true" />
 
                 </RelativeLayout>
 
-            ///navigation
+
                 <com.vincent.bottomnavigationbar.BottomNavigationBar
                     android:id="@+id/bottom_navigation"
                     android:layout_width="match_parent"

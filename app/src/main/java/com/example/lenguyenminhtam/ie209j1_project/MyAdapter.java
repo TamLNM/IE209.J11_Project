@@ -4,12 +4,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentManager;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MyAdapter extends FragmentStatePagerAdapter {
     private String              listTab[] = {"LỚP", "HỌC SINH"};
     private Fragment_Lop        mFragmentLop;
     private Fragment_HocSinh    mFragmentHocSinh;
-
+    
     public MyAdapter(FragmentManager fm)
     {
         super(fm);

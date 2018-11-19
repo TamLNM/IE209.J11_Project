@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/img_background"
+        android:orientation="vertical"
+        android:paddingBottom="80dp"
+        >
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="50dp"
+            android:paddingBottom="30dp"
+            android:text="Tiếp nhận học sinh"
+            android:textColor="#126d09"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="20dp"
+                android:src="@drawable/man" />
+
+            <EditText
+                android:layout_weight="1"
+                android:id="@+id/txt_nhaphoten"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:hint="Họ và Tên" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="20dp"
+                android:src="@drawable/calendar1" />
+
+            <EditText
+                android:layout_weight="1"
+                android:id="@+id/txt_nhapngaysinh"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+
+                android:drawablePadding="40dp"
+
+                android:hint="Ngày sinh" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="20dp"
+                android:src="@drawable/gender" />
+
+            <RadioGroup
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_weight="1"
+                    android:id="@+id/rdo_nam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Nam" />
+
+                <RadioButton
+                    android:layout_weight="1"
+                    android:id="@+id/rdo_nu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Nữ" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="20dp"
+                android:src="@drawable/email" />
+
+            <EditText
+                android:layout_weight="1"
+                android:id="@+id/txt_nhapemail"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+
+
+                android:hint="Email" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="100dp">
+
+            <ImageView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="20dp"
+                android:src="@drawable/placeholder" />
+
+            <EditText
+                android:layout_weight="1"
+                android:id="@+id/txt_nhapdiachi"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+
+
+                android:hint="Địa chỉ" />
+        </LinearLayout>
+
+
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/btn_themhs"
+            android:layout_width="300dp"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="#bdd1bc"
+
+            android:text="THÊM HỌC SINH"
+            android:textColor="#4e4f51"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

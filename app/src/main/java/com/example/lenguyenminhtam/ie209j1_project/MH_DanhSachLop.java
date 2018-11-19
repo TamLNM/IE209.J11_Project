@@ -75,6 +75,7 @@ public class MH_DanhSachLop extends  AppCompatActivity {
         item1.setIconResID(getResources().getIdentifier("ic_home", "drawable", mPackageName));
         item1.setActiveBgResID(R.drawable.bg_bottom_navi_selected);
         item1.setInactiveBgResID(R.drawable.bg_bottom_navi_normal);
+
         mBnbDefault.addItem(item1);
         mBnbDefaultList.add(item1);
 
