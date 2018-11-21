@@ -59,6 +59,7 @@ public class HocSinhAdapter extends RecyclerView.Adapter<HocSinhAdapter.MyViewHo
                 txt_gioitinh.setText(mData.get(viewHolder.getAdapterPosition()).getGioitinh());
                 txt_diachi.setText(mData.get(viewHolder.getAdapterPosition()).getDiachi());
                 txt_email.setText(mData.get(viewHolder.getAdapterPosition()).getEmail());
+                txt_ngaysinh.setText(mData.get(viewHolder.getAdapterPosition()).getNgaysinh());
                 myDialog.show();
             }
         });

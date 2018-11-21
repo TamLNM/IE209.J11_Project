@@ -11,8 +11,8 @@
     android:layout_marginRight="10dp"
     android:layout_marginTop="10dp"
 android:paddingLeft="10dp"
-
-    android:paddingBottom="15dp"
+android:paddingTop="12dp"
+android:paddingBottom="2dp"
     android:clickable="true"
 
     android:background="#ffffff">
@@ -118,7 +118,7 @@ android:paddingLeft="10dp"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:layout_below="@+id/img_hs"
-        android:layout_marginLeft="13dp"
+        android:layout_marginLeft="14dp"
         android:text="mshs"
         android:textSize="13dp"
 
