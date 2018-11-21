@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:paddingHorizontal="20dp"
-                android:src="@drawable/man" />
+                android:src="@drawable/man1" />
 
             <EditText
                 android:layout_weight="1"
@@ -75,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:paddingHorizontal="20dp"
-                android:src="@drawable/gender" />
+                android:src="@drawable/gender1" />
 
             <RadioGroup
                 android:layout_weight="1"
@@ -108,7 +108,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:paddingHorizontal="20dp"
-                android:src="@drawable/email" />
+                android:src="@drawable/email1" />
 
             <EditText
                 android:layout_weight="1"
@@ -130,7 +130,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:paddingHorizontal="20dp"
-                android:src="@drawable/placeholder" />
+                android:src="@drawable/placeholder1" />
 
             <EditText
                 android:layout_weight="1"
