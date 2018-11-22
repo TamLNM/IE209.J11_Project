@@ -10,6 +10,14 @@
     <string name="danh_sach_lop">DANH SÁCH LỚP</string>
     <string name="ngaysinh">ngaysinh</string>
     <string name="mshs">mshs</string>
+
+
+    ///String bottom nav
     <string name="tenlop">Tên Lớp</string>
+    <string name="trangchu">TrangChủ</string>
+    <string name="themmoi">ThêmMới</string>
+    <string name="caidat">CàiĐặt</string>
+    <string name="nhapdiem">NhậpĐiểm</string>
+    <string name="baocao">BáoCáo</string>
 
 </resources>

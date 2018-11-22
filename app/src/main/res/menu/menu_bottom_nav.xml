@@ -2,33 +2,35 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
+
     <item
         android:id="@+id/nav_home"
         android:enabled="true"
         android:icon="@drawable/ic_home"
-        android:title="Home" />
+        android:title="@string/trangchu" />
     <item
         android:id="@+id/nav_themsv"
         android:enabled="true"
         android:icon="@drawable/ic_person_add"
-        android:title="Thêm sinh viên"
+        android:title="@string/themmoi"
+        android:titleCondensed="@string/baocao"
         />
     <item
         android:id="@+id/nav_nhapdiem"
         android:enabled="true"
         android:icon="@drawable/ic_input_score"
-        android:title="Nhập điểm"
+        android:title="@string/nhapdiem"
         />
     <item
         android:id="@+id/nav_baocao"
         android:enabled="true"
         android:icon="@drawable/ic_assessment"
-        android:title="Báo cáo tổng kết"/>
+        android:title="@string/baocao" />
     <item
         android:id="@+id/nav_setting"
         android:enabled="true"
         android:icon="@drawable/ic_settings"
-        android:title="Cài đặt"
+        android:title="@string/caidat"
         />
 
 </menu>
