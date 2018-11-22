@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MH_DanhSachLop"
+    tools:context=".ThemHocSinhActivity"
     android:background="#f5f5f5"
     android:id="@+id/mh_themhs">
 
