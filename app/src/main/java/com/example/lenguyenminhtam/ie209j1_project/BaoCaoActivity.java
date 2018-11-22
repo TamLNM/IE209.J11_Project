@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,14 +14,17 @@ import android.widget.TextView;
 
 public class BaoCaoActivity extends AppCompatActivity {
 
+    private static final String TAG = "BaoCaoActivity";
+    private ViewPager vp;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_baocao);
+        initView();
 
-        TextView title = (TextView) findViewById(R.id.activityBaoCao);
-        title.setText("This is BaoCaoActivity");
 
+        ////Bottom Nav
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         Menu menu = bottomNavigationView.getMenu();
@@ -58,6 +63,15 @@ public class BaoCaoActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+
+    private void initView ()
+    {
+        vp = (ViewPager) findViewById(R.id.vp_monhoc_hocky);
+        vp.setAdapter(new SelectTab_MonHoc_HocKyAdapter(getSupportFragmentManager()));
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tl_monhoc_hocky);
+        tabLayout.setupWithViewPager(vp);
     }
 
 }

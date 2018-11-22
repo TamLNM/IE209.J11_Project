@@ -1,29 +1,14 @@
 package com.example.lenguyenminhtam.ie209j1_project;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Switch;
-import android.widget.TextView;
-
-import com.vincent.bottomnavigationbar.BottomItem;
-import com.vincent.bottomnavigationbar.BottomNavigationBar;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MH_DanhSachLop extends  AppCompatActivity {
     private static final String TAG = "MH_DanhSachLop";
@@ -81,7 +66,7 @@ public class MH_DanhSachLop extends  AppCompatActivity {
     private void initView ()
    {
        vp = (ViewPager) findViewById(R.id.vp_lop_hocsinh);
-       vp.setAdapter(new MyAdapter(getSupportFragmentManager()));
+       vp.setAdapter(new SelectTab_Lop_HocSinhAdapter(getSupportFragmentManager()));
        TabLayout tabLayout = (TabLayout) findViewById(R.id.tl_lop_hocsinh);
        tabLayout.setupWithViewPager(vp);
    }

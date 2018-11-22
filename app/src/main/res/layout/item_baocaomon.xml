@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:id="@+id/item_dshs"
+    android:orientation="vertical"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
+    android:paddingLeft="10dp"
+    android:paddingTop="12dp"
+    android:clickable="true"
+    android:background="@color/background_layout"
+    >
+
+
+    <TextView
+        android:id="@+id/tv_tenlop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_siso"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="0dp"
+        android:width="180dp"
+        android:clickable="true"
+        android:text="@string/tenlop"
+        android:textColor="@color/colorGrey"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/txt_siso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:drawableLeft="@drawable/ic_siso"
+        android:paddingTop="25dp"
+        android:text="Sĩ số: "
+        android:textColor="@color/colorPrimary"
+        android:textSize="13dp" />
+
+    <TextView
+        android:id="@+id/tv_siso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="130dp"
+        android:paddingTop="25dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="13dp" />
+
+
+    <TextView
+        android:id="@+id/txt_soluongdat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:width="220dp"
+        android:drawableLeft="@drawable/ic_siso"
+        android:paddingTop="50dp"
+        android:text="Số lượng Đạt: "
+        android:textColor="@color/colorPrimary"
+        android:textSize="13dp" />
+
+    <TextView
+        android:id="@+id/tv_soluongdat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="130dp"
+        android:paddingTop="50dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="13dp"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/shape_line_y"
+        android:layout_marginLeft="170dp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/txt_tyledat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="260dp"
+        android:paddingTop="10dp"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="16dp"
+        android:text="Tỷ lệ"/>
+
+    <TextView
+        android:id="@+id/tv_tyledat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:paddingTop="38dp"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="16dp"
+        />
+
+
+
+
+</RelativeLayout>
+
+
+
+
+
+

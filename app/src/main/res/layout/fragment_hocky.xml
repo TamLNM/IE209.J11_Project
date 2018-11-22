@@ -3,11 +3,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/edit_TenHocKy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:hint="Học kỳ"
+        android:inputType="textPersonName"
+        />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_DanhSachLop"
+        android:id="@+id/rv_BaoCaoTheoKy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="vertical"/>

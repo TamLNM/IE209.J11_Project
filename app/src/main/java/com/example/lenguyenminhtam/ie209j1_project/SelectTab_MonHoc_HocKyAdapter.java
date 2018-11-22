@@ -1,34 +1,31 @@
 package com.example.lenguyenminhtam.ie209j1_project;
 
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentManager;
-
-import java.util.ArrayList;
-import java.util.List;
+import android.support.v4.app.FragmentStatePagerAdapter;
 
 
-public class MyAdapter extends FragmentStatePagerAdapter {
-    private String              listTab[] = {"LỚP", "HỌC SINH"};
-    private Fragment_Lop        mFragmentLop;
-    private Fragment_HocSinh    mFragmentHocSinh;
-    
-    public MyAdapter(FragmentManager fm)
+public class SelectTab_MonHoc_HocKyAdapter extends FragmentStatePagerAdapter {
+    private String              listTab[] = {"THEO MÔN HỌC ", "THEO HỌC KỲ"};
+    private MonHoc_Fragment   mMonHocFragment;
+    private HocKy_Fragment    mHocKyFragment;
+
+    public SelectTab_MonHoc_HocKyAdapter(FragmentManager fm)
     {
         super(fm);
-        mFragmentLop = new Fragment_Lop();
-        mFragmentHocSinh = new Fragment_HocSinh();
+        mMonHocFragment = new MonHoc_Fragment();
+        mHocKyFragment = new HocKy_Fragment();
     }
 
     public Fragment getItem(int pos)
     {
         if (pos == 0)
         {
-            return mFragmentLop;
+            return mMonHocFragment;
         }
         else if (pos == 1)
         {
-            return mFragmentHocSinh;
+            return mHocKyFragment;
         }
         else
         {

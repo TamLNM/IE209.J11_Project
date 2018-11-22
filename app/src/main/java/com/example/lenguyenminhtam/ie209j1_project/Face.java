@@ -11,6 +11,7 @@ public class Face {
         this.SiSoNu     = SiSoNu;
     }
 
+
     public void setTenLop(String tenLop) {
         TenLop = tenLop;
     }
