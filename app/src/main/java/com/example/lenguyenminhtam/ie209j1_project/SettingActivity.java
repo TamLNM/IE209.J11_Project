@@ -8,18 +8,19 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 public class SettingActivity  extends AppCompatActivity {
+
+    TextView tvThayDoiQuyDinh;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
-        TextView title = (TextView) findViewById(R.id.activitySetting);
-        title.setText("This is SettingActivity");
-
+        // Bottom navigation
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         Menu menu = bottomNavigationView.getMenu();
@@ -58,6 +59,20 @@ public class SettingActivity  extends AppCompatActivity {
                 return false;
             }
         });
+
+        // Navigate to MH_ThayDoiQuyDinh
+        tvThayDoiQuyDinh = findViewById(R.id.tv_ThayDoiQuyDinh);
+        tvThayDoiQuyDinh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                initView();
+            }
+        });
+    }
+
+    void initView(){
+        Intent intent = new Intent(this, MH_ThayDoiQuyDinh.class);
+        startActivity(intent);
     }
 
 }
