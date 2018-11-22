@@ -16,8 +16,8 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/white_grey_border_top"
                 app:tabMode="fixed"
-                app:tabTextColor="#ffffff"
-                app:tabIndicatorColor="#ffffff"/>
+                app:tabTextColor="@color/tab_text"
+                app:tabIndicatorColor="@color/tab_Indicator"/>
 
                 <RelativeLayout
                 android:layout_width="match_parent"
@@ -47,9 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/white_grey_border_top"
-            app:itemHorizontalTranslationEnabled="false"
-            app:itemIconTint="@color/grey"
-            app:itemTextColor="@color/grey"
+            app:itemHorizontalTranslationEnabled="false"        
             app:menu="@menu/menu_bottom_nav">
 
         </android.support.design.widget.BottomNavigationView>
