@@ -43,13 +43,21 @@
             android:layout_alignParentBottom="true">
 
             <android.support.design.widget.BottomNavigationView
+                android:id="@+id/bottomNavView_Bar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/bottomNavView_Bar"
-                android:background="@drawable/white_grey_border_top"
+                android:background="@color/tab_background"
                 app:itemHorizontalTranslationEnabled="false"
-                app:menu="@menu/menu_bottom_nav">
+                app:itemIconTint="@drawable/background_selector"
+                app:itemTextColor="@drawable/background_selector"
+                app:menu="@menu/menu_bottom_nav"
+                tools:itemHorizontalTranslationEnabled="false"
+                app:labelVisibilityMode="labeled"
+                >
+
             </android.support.design.widget.BottomNavigationView>
+
         </RelativeLayout>
+        
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
