@@ -3,10 +3,12 @@
     <string name="ten_hs">ten</string>
     <string name="gioitinh">gt</string>
     <string name="diachi">diachi</string>
-    <string name="mshs">mshs</string>
     <string name="soluong_hsnam">Nam: 40</string>
     <string name="si_so_lop">Sỉ số: 100</string>
     <string name="ten_lop">10A1</string>
     <string name="si_so_hsnu">Nữ: 40</string>
     <string name="danh_sach_lop">DANH SÁCH LỚP</string>
+    <string name="ngaysinh">ngaysinh</string>
+    <string name="mshs">mshs</string>
+
 </resources>

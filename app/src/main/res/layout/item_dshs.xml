@@ -10,12 +10,10 @@
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
     android:layout_marginTop="10dp"
-android:paddingLeft="10dp"
-android:paddingTop="12dp"
-
+    android:paddingLeft="10dp"
+    android:paddingTop="12dp"
     android:clickable="true"
-
-    android:background="#ffffff">
+    android:background="@color/background_layout">
 
 
     <ImageView
@@ -24,9 +22,7 @@ android:paddingTop="12dp"
         android:layout_height="65dp"
 
         android:clickable="true"
-        android:src="@drawable/if_male3_403019"
-
-        />
+        android:src="@drawable/if_male3_403019" />
 
 
 
@@ -38,7 +34,7 @@ android:paddingTop="12dp"
         android:clickable="true"
         android:layout_marginLeft="80dp"
 
-        android:text="ten"
+        android:text="@string/ten_hs"
         android:textStyle="bold"
        />
 
@@ -62,7 +58,7 @@ android:paddingTop="12dp"
         android:layout_below="@+id/txt_tenhs"
         android:layout_marginLeft="100dp"
         android:paddingTop="10dp"
-        android:text="gt"
+        android:text="@string/gioitinh"
         android:textSize="13dp"
          />
     <ImageView
@@ -85,7 +81,7 @@ android:paddingTop="12dp"
         android:layout_below="@+id/txt_tenhs"
         android:layout_marginLeft="200dp"
         android:paddingTop="10dp"
-        android:text="ngaysinh"
+        android:text="@string/ngaysinh"
         android:textSize="13dp"
         />
 
@@ -109,7 +105,7 @@ android:paddingTop="12dp"
         android:layout_marginLeft="100dp"
         android:layout_below="@+id/txt_gioitinh"
         android:paddingTop="10dp"
-        android:text="diachi"
+        android:text="@string/diachi"
         android:textSize="13dp"
          />
     <TextView
@@ -119,7 +115,7 @@ android:paddingTop="12dp"
         android:clickable="true"
         android:layout_below="@+id/img_hs"
         android:layout_marginLeft="14dp"
-        android:text="mshs"
+        android:text="@string/mshs"
         android:textSize="13dp"
 
 

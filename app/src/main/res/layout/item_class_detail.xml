@@ -26,7 +26,7 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:background="#003e52"
-            android:textColor="#ffffff"
+            android:textColor="@color/colorWhite"
             android:textSize="25dp"/>
 
         <TextView
@@ -39,7 +39,7 @@
             android:paddingBottom="5dp"
             android:layout_gravity="left"
             android:paddingLeft="125dp"
-            android:text="Sỉ số: 100"/>
+            android:text="@string/si_so_lop"/>
 
         <TextView
             android:id="@+id/tv_sisonam_detailscreen"
@@ -50,7 +50,7 @@
             android:paddingBottom="5dp"
             android:layout_gravity="left"
             android:paddingLeft="125dp"
-            android:text="Nam: 40"/>
+            android:text="@string/soluong_hsnam"/>
 
         <TextView
             android:id="@+id/tv_sisonu_detailscreen"
@@ -61,7 +61,7 @@
             android:paddingBottom="15dp"
             android:layout_gravity="left"
             android:paddingLeft="125dp"
-            android:text="Nữ: 40"/>
+            android:text="@string/si_so_hsnu"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -76,8 +76,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:background="#003e52"
-                android:textColor="#ffffff"
-                android:text="DANH SÁCH LỚP"/>
+                android:textColor="@color/colorWhite"
+                android:text="@string/danh_sach_lop"/>
 
             <Button
                 android:id="@+id/btn_bangdiemlop"
@@ -86,8 +86,8 @@
                 android:layout_margin="5dp"
                 android:textAlignment="center"
                 android:background="#003e52"
-                android:textColor="#ffffff"
-                android:text="Bảng điểm lớp"/>
+                android:textColor="@color/colorWhite"
+                android:text="bang diem lop"/>
 
         </LinearLayout>
 

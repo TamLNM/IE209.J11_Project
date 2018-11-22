@@ -3,14 +3,12 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="colorWhite">#003e52</color>
 
     <color name="tab_text">#303F9F</color>
     <color name="tab_Indicator">#303F9F</color>
 
     <color name="colorWhite">#f5f5f5</color>
-
     <color name="colorGrey">#003e52 </color>
+
     <color name="background_layout">#f5f5f5</color>
 </resources>
