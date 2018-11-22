@@ -17,6 +17,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".MH_DanhSachLop"></activity>
+        ///ThaoHoang star edit
+        <activity android:name=".ThemHocSinhActivity"></activity>
+        <activity android:name=".NhapDiemActivity"></activity>
+        <activity android:name=".BaoCaoActivity"></activity>
+        <activity android:name=".SettingActivity"></activity>
+        ///ThaoHoang end edit
+
 
 
     </application>
