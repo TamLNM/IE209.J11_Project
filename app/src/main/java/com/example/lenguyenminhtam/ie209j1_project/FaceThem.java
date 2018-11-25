@@ -1,17 +1,26 @@
 package com.example.lenguyenminhtam.ie209j1_project;
 
-public class Face {
+public class FaceThem {
     private String TenLop;
-    private int SiSo, SiSoNu, SiSoNam;
+    private int SiSo, SiSoNu, SiSoNam, SiSoHienTai;
 
 
-    public Face(String TenLop, int SiSo, int SiSoNu, int SiSoNam){
+    public FaceThem(String TenLop, int SiSo, int SiSoNu, int SiSoNam, int SiSoHienTai){
         this.TenLop     = TenLop;
         this.SiSo       = SiSo;
         this.SiSoNam    = SiSoNam;
         this.SiSoNu     = SiSoNu;
+        this.SiSoHienTai = SiSoHienTai;
     }
 
+    public void setSiSoHienTai(int siSoHienTai) {
+        SiSoHienTai = siSoHienTai;
+    }
+
+    public int getSiSoHienTai() {
+
+        return SiSoHienTai;
+    }
 
     public void setTenLop(String tenLop) {
         TenLop = tenLop;
