@@ -1,6 +1,7 @@
 package com.example.lenguyenminhtam.ie209j1_project;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -20,7 +21,8 @@ import android.widget.TextView;
 
 import java.util.Calendar;
 
-public class ThemHocSinhActivity extends AppCompatActivity {
+public class ThemHocSinhActivity extends AppCompatActivity  {
+    Context context;
     EditText txt_nhaphoten;
     //private ImageView imageView;
     //private ViewPager vp;
@@ -32,11 +34,12 @@ public class ThemHocSinhActivity extends AppCompatActivity {
     EditText txt_nhapdiachi;
     Calendar c;
     DatePickerDialog dpd_ngaysinh;
+    private  Button btn_themhs;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_themhocsinh);
-
+        context = this;
 
         ////DO add somthing.....
 
@@ -48,13 +51,14 @@ public class ThemHocSinhActivity extends AppCompatActivity {
         txt_nhapdiachi = findViewById(R.id.txt_nhapdiachi);
 
 
-        Button button = (Button) findViewById(R.id.btn_themhs);
-        button.setOnClickListener(new View.OnClickListener() {
+        btn_themhs= findViewById(R.id.btn_themhs);
+        btn_themhs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 navigateToChonLop();
             }
         });
+
         txt_nhapngaysinh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,7 +79,7 @@ public class ThemHocSinhActivity extends AppCompatActivity {
 
         ////BottomNav
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
-        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+//        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(1);
         menuItem.setChecked(true);
@@ -114,9 +118,9 @@ public class ThemHocSinhActivity extends AppCompatActivity {
             }
         });
     }
-    public void navigateToChonLop(){
-        Intent intent = new Intent(ThemHocSinhActivity.this, Fragment_ChonLop.class);
-        ThemHocSinhActivity.this.startActivity(intent);
-    }
+        public void navigateToChonLop(){
+            Intent intent = new Intent(context, Fragment_ChonLop.class);
+            context.startActivity(intent);
+        }
 
 }

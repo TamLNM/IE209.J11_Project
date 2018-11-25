@@ -19,11 +19,12 @@
         <activity android:name=".MH_DanhSachLop"></activity>
         <activity android:name=".MH_ThayDoiQuyDinh"></activity>
         <activity android:name=".MH_ThayDoiThongTinMonHoc"></activity>
+	<activity android:name=".MH_ThayDoiThongTinLop"></activity>
         <activity android:name=".ThemHocSinhActivity"></activity>
         <activity android:name=".NhapDiemActivity"></activity>
         <activity android:name=".BaoCaoActivity"></activity>
         <activity android:name=".SettingActivity"></activity>
-        
+        <activity android:name=".Fragment_ChonLop"></activity>
 
 
 
