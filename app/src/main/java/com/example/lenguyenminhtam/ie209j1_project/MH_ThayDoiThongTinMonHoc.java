@@ -1,12 +1,18 @@
 package com.example.lenguyenminhtam.ie209j1_project;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MH_ThayDoiThongTinMonHoc extends AppCompatActivity {
 
@@ -17,6 +23,17 @@ public class MH_ThayDoiThongTinMonHoc extends AppCompatActivity {
         // Load fragment
         Fragment_MonHoc fm_monhoc = new Fragment_MonHoc();
         loadFragment(fm_monhoc);
+
+        // Add tv_ThemMonHoc.onClick event
+        ImageView imv_ThemMonHoc = (ImageView) findViewById(R.id.imv_ThemMonHoc);
+        imv_ThemMonHoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog dlg_themmonhoc = new Dialog(v.getContext());
+                dlg_themmonhoc.setContentView(R.layout.fragment_themmonhoc);
+                dlg_themmonhoc.show();
+            }
+        });
 
         // Add bottom navigation bar
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);

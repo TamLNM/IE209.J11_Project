@@ -84,6 +84,7 @@
                 android:background="#aeaeae" />
 
             <TextView
+                android:id="@+id/tv_DangXuat"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="Đăng xuất"

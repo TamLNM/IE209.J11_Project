@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class SettingActivity  extends AppCompatActivity {
 
-    TextView tvThayDoiQuyDinh;
+    TextView tvThayDoiQuyDinh, tvDangXuat;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -65,14 +65,27 @@ public class SettingActivity  extends AppCompatActivity {
         tvThayDoiQuyDinh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                initView();
+                initView2();
+            }
+        });
+
+        // tv_DangXuat.OnClick()
+        tvDangXuat = findViewById(R.id.tv_DangXuat);
+        tvDangXuat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                initView3();
             }
         });
     }
 
-    void initView(){
+    void initView2(){
         Intent intent = new Intent(this, MH_ThayDoiQuyDinh.class);
         startActivity(intent);
     }
 
+    void initView3() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }
