@@ -87,7 +87,7 @@
                 android:textAlignment="center"
                 android:background="#003e52"
                 android:textColor="@color/colorWhite"
-                android:text="bang diem lop"/>
+                android:text="BẢNG ĐIỂM LỚP"/>
 
         </LinearLayout>
 

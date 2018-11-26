@@ -33,7 +33,7 @@ public class Fragment_HocSinh_MHNhapDiemTheoLop extends Fragment {  private View
         //for (int i = 1; i <= 3; i++){
         mListFace.add(new FaceHS_MHNhapDiemTheoLop(1,15520480, "Lê Duyên Minh"));
         mListFace.add(new FaceHS_MHNhapDiemTheoLop(2,15520756, "Lê Nguyễn Minh Tâm"));
-        mListFace.add(new FaceHS_MHNhapDiemTheoLop(3,15520817, "Hoàng Thị Thảp"));
+        mListFace.add(new FaceHS_MHNhapDiemTheoLop(3,15520817, "Hoàng Thị Thảo  "));
 
         // Create adapter
         mAdapter = new MyHS_MHNhapDiemTheoLop_Adapter(mListFace, getContext());

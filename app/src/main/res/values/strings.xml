@@ -60,7 +60,7 @@
 
     // List for Hoc Ky Spinner
     <string-array name="DSLoaiDiem">
-        <item>Miêng</item>
+        <item>Miệng</item>
         <item>15 phút</item>
         <item>1 tiết</item>
         <item>Học kỳ</item>
