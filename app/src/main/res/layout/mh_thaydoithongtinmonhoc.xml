@@ -58,6 +58,6 @@
             </android.support.design.widget.BottomNavigationView>
 
         </RelativeLayout>
-        
+
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

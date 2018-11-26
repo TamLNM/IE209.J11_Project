@@ -46,7 +46,27 @@ public class FaceBaoCaoAdapter extends RecyclerView.Adapter<FaceBaoCaoAdapter.Vi
         face.TinhTyLe(face.getSiSo(),face.getSoLuongDat());
         viewHolder.tvTyLeDat.setText("" + face.getTyLeDat()+ "%");
 
+        // Init child dialog (detail class info)
+        myClassInfoDialog = new Dialog(context);
+        myClassInfoDialog.setContentView(R.layout.item_class_detail);
 
+        TextView tv_tenlop_detailscreen  = myClassInfoDialog.findViewById(R.id.tv_tenlop_detailscreen);
+        TextView tv_siso_detailscreen    = myClassInfoDialog.findViewById(R.id.tv_siso_detailscreen);
+        TextView tv_sisonam_detailscreen = myClassInfoDialog.findViewById(R.id.tv_sisonam_detailscreen);
+        TextView tv_sisonu_detailscreen  = myClassInfoDialog.findViewById(R.id.tv_sisonu_detailscreen);
+        tv_tenlop_detailscreen.setText(face.getTenLop());
+        tv_siso_detailscreen.setText("Sỉ số: "+ face.getSiSo());
+
+
+        // Set event reclycler view onClick()
+        viewHolder.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onClick(View view, int position, boolean isLongClick) {
+                myClassInfoDialog.show();
+
+                Button btnBangDiemLop = myClassInfoDialog.findViewById(R.id.btn_xembangdiem);
+            }
+        });
 
 
 

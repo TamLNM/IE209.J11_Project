@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:drawableLeft="@drawable/ic_siso"
-        android:paddingTop="25dp"
+        android:paddingTop="32dp"
         android:text="Sĩ số: "
         android:textColor="@color/colorPrimary"
         android:textSize="13dp" />
@@ -46,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="130dp"
-        android:paddingTop="25dp"
+        android:paddingTop="32dp"
         android:textColor="@color/colorPrimary"
         android:textSize="13dp" />
 
@@ -58,7 +58,7 @@
         android:layout_marginLeft="10dp"
         android:width="220dp"
         android:drawableLeft="@drawable/ic_siso"
-        android:paddingTop="50dp"
+        android:paddingTop="58dp"
         android:text="Số lượng Đạt: "
         android:textColor="@color/colorPrimary"
         android:textSize="13dp" />
@@ -68,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="130dp"
-        android:paddingTop="50dp"
+        android:paddingTop="58dp"
         android:textColor="@color/colorPrimary"
         android:textSize="13dp"
 

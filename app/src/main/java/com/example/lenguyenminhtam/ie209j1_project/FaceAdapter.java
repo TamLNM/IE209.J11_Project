@@ -67,7 +67,8 @@ public class FaceAdapter extends RecyclerView.Adapter<FaceAdapter.ViewHolder>
             public void onClick(View view, int position, boolean isLongClick) {
                 myClassInfoDialog.show();
 
-                Button btnBangDiemLop = myClassInfoDialog.findViewById(R.id.btn_xembangdiem);
+                Button btnOK = myClassInfoDialog.findViewById(R.id.btn_xembangdiem);
+
             }
         });
     }

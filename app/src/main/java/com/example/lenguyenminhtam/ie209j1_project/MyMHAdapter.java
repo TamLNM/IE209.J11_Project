@@ -1,13 +1,17 @@
 package com.example.lenguyenminhtam.ie209j1_project;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyMHAdapter  extends RecyclerView.Adapter<MyMHAdapter.ViewHolder> {
@@ -15,12 +19,29 @@ public class MyMHAdapter  extends RecyclerView.Adapter<MyMHAdapter.ViewHolder> {
     private List<FaceMonHoc> mListFaceMH;
     private Context context;
 
+
+    ///Add Diaglog
+
+    ListView lvMonHoc;
+    ArrayList<FaceMonHoc> arrEmployee=new ArrayList<FaceMonHoc>();
+    ArrayAdapter<FaceMonHoc> adapter=null;
+    //Khai báo 1 FaceMonHoc object
+    FaceMonHoc monhoc=null;
+
+
+
+
+    ///end diaglog
+
+    ///End Dialog
+
     public MyMHAdapter() {}
 
     public MyMHAdapter(List<FaceMonHoc> mListFaceMH, Context context) {
         this.mListFaceMH = mListFaceMH;
         this.context = context;
     }
+
 
     @NonNull
     @Override

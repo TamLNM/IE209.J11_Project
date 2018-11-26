@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +36,6 @@ public class MonHoc_Fragment extends Fragment{
         mListFace.add(new FaceBaoCao("10A1", 100, 80));
         mListFace.add(new FaceBaoCao("10A2", 100, 70));
         mListFace.add(new FaceBaoCao("10A3", 38, 24));
-
 
         // Create adapter
         mAdapter = new FaceBaoCaoAdapter(mListFace, getContext());

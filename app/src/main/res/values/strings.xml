@@ -14,10 +14,14 @@
 
     ///String bottom nav
     <string name="tenlop">Tên Lớp</string>
-    <string name="trangchu">TrangChủ</string>
-    <string name="themmoi">ThêmMới</string>
-    <string name="caidat">CàiĐặt</string>
-    <string name="nhapdiem">NhậpĐiểm</string>
-    <string name="baocao">BáoCáo</string>
+    <string name="trangchu">Trang chủ</string>
+    <string name="themmoi">Thêm mới</string>
+    <string name="caidat">Cài đặt</string>
+    <string name="nhapdiem">Nhập điểm</string>
+    <string name="baocao">Báo cáo</string>
+    <string name="chon_mon_hoc">Chọn Môn Học</string>
+    <string name="button_cencel">CENCEL</string>
+    <string name="button_OK">OK</string>
+    <string name="chon_hocky">Chọn Học Kỳ</string>
 
 </resources>
