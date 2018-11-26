@@ -20,4 +20,44 @@
     <string name="nhapdiem">NhậpĐiểm</string>
     <string name="baocao">BáoCáo</string>
 
+
+    // List for Lop Spinner
+    <string-array name="DSLop">
+        <item>10A1</item>
+        <item>10A2</item>
+        <item>11A1</item>
+        <item>11A2</item>
+    </string-array>
+
+    // List for Hoc Ky Spinner
+    <string-array name="DSMonHoc">
+        <item>Toán</item>
+        <item>Lý</item>
+        <item>Hóa</item>
+        <item>Văn</item>
+        <item>Anh văn</item>
+    </string-array>
+
+
+    // List for Hoc Ky Spinner
+    <string-array name="DSHocKy">
+        <item>Học kỳ 1</item>
+        <item>Học kỳ 2</item>
+    </string-array>
+
+    // List for Hoc Ky Spinner
+    <string-array name="DSNamHoc">
+        <item>2016 - 2017</item>
+        <item>2017 - 2018</item>
+        <item>2018 - 2019</item>
+    </string-array>
+
+    // List for Hoc Ky Spinner
+    <string-array name="DSLoaiDiem">
+        <item>Miêng</item>
+        <item>15 phút</item>
+        <item>1 tiết</item>
+        <item>Học kỳ</item>
+    </string-array>
+
 </resources>
