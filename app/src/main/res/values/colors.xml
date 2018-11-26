@@ -11,5 +11,5 @@
     <color name="colorWhite">#f5f5f5</color>
     <color name="colorGrey">#025e09</color>
 
-    <color name="background_layout">#f5f5f5</color>
+    <color name="background_layout">#ffffff</color>
 </resources>

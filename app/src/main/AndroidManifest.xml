@@ -24,8 +24,9 @@
         <activity android:name=".NhapDiemActivity"></activity>
         <activity android:name=".BaoCaoActivity"></activity>
         <activity android:name=".SettingActivity"></activity>
-        <activity android:name=".Fragment_ChonLop"></activity>
+		<activity android:name=".Fragment_ChonLop"></activity>
         <activity android:name=".MH_NhapDiemTheoLop" />
+		<activity android:name=".MH_ChonLop"></activity>
     </application>
 
 </manifest>

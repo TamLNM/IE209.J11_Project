@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Fragment_ThemHs"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/Fragment_ThemHs">
+    android:background="#EEEEEE"
+    android:orientation="vertical">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="Chọn lớp:"
+        android:textColor="#126d09"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/rv_ChonLop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        ></android.support.v7.widget.RecyclerView>
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>
