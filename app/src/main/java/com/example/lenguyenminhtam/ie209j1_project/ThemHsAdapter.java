@@ -87,22 +87,23 @@ public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder
         viewHolder.tv_sisohientai.setText(String.valueOf(mListFace.get(i).getSiSoHienTai()));
 
         Drawable img;
-//       if(viewHolder.tv_siso.getText().equals(viewHolder.tv_sisohientai.getText())){
-//           viewHolder.tv_trangthai.setText("Sẵn sàng");
-//           img = context.getResources().getDrawable( R.drawable.ic_checked);
+//        if(viewHolder.tv_siso.getText().toString().equals(viewHolder.tv_sisohientai.getText().toString())){
+//            viewHolder.tv_trangthai.setText(context.getResources().getString(R.string.sansang));
+//            img = context.getResources().getDrawable( R.drawable.ic_checked);
 //
-//           viewHolder.tv_trangthai.setCompoundDrawables( img, null, null, null );
+//            viewHolder.tv_trangthai.setCompoundDrawables( img, null, null, null );
 //
-//           viewHolder.tv_trangthai.setTextColor(Color.parseColor("#56bf1e"));
-//       }
-//       else{
-//              viewHolder.tv_trangthai.setText("Đã đầy");
-//           img = context.getResources().getDrawable( R.drawable.ic_multiply);
+//            viewHolder.tv_trangthai.setTextColor(Color.parseColor("#56bf1e"));
+//        }
+//        else{
 //
-//           viewHolder.tv_trangthai.setCompoundDrawables( img, null, null, null );
+//            viewHolder.tv_trangthai.setText(context.getResources().getString(R.string.daday));
+//            img = context.getResources().getDrawable( R.drawable.ic_multiply);
 //
-//           viewHolder.tv_trangthai.setTextColor(Color.parseColor("#f21d1d"));
-//       }
+//            //viewHolder.tv_trangthai.setCompoundDrawables( img, null, null, null );
+//
+//            //viewHolder.tv_trangthai.setTextColor(Color.parseColor("#f21d1d"));
+//        }
 
 
 

@@ -53,12 +53,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="1"
-                    android:paddingTop="50dp"
-                    android:paddingBottom="30dp"
-                    android:text="Tiếp nhận học sinh"
-                    android:textColor="#126d09"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                     />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -123,8 +120,8 @@
 
                         <RadioButton
                             android:id="@+id/rdo_nam"
-                            android:scaleX="0.6"
-                            android:scaleY="0.6"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -140,8 +137,8 @@
                             android:id="@+id/rdo_nu"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:scaleX="0.6"
-                            android:scaleY="0.6"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
                             android:layout_marginLeft="80dp"
                             android:layout_weight="1"
                            />
@@ -203,11 +200,11 @@
                 <Button
                     android:id="@+id/btn_themhs"
                     android:layout_width="300dp"
-                    android:layout_height="20dp"
+                    android:layout_height="10dp"
                     android:minHeight="0dp"
                     android:minWidth="0dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="100dp"
                     android:layout_weight="1"
                     android:background="@color/tab_background"
                     android:layout_marginBottom="20dp"
