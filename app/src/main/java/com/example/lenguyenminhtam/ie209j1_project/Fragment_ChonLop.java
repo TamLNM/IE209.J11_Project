@@ -23,11 +23,11 @@ private ThemHsAdapter mAdapter;
     public RecyclerView mRrvFace;
 
     public View onCreateView (@NonNull LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState)  {
-        super.onCreate(savedInstanceState);
+
         mRootView = inflater.inflate(R.layout.fragment_chonlop, container, false);
 
-//        mRrvFace.setHasFixedSize(true);
         mRrvFace=mRootView.findViewById(R.id.rv_ChonLop);
+        mRrvFace.setHasFixedSize(true);
         mRrvFace.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         mListFace=new ArrayList<>();
@@ -35,7 +35,7 @@ private ThemHsAdapter mAdapter;
         mListFace.add(new FaceThem("10A2", 100, 80, 20,100));
 
         mAdapter = new ThemHsAdapter(mListFace, getContext());
-                mRrvFace.setAdapter(mAdapter);
+         mRrvFace.setAdapter(mAdapter);
         return mRootView;
     }
 

@@ -48,23 +48,22 @@ public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder
         itemView=LayoutInflater.from(context).inflate(R.layout.item_chonlop, viewGroup, false);
         final ViewHolder viewHolder = new ViewHolder(itemView);
 
-        viewHolder.item_chonlop.setOnClickListener(new View.OnClickListener(){
-   @Override
-       public void onClick(View view) {
-
+       viewHolder.item_chonlop.setOnClickListener(new View.OnClickListener(){
+  @Override
+     public void onClick(View view) {
 //         LinearLayout item_chonlop = myClassInfoDialog.findViewById(R.id.item_chonlop);
-           TextView tv_tenlop_detailscreen    = myClassInfoDialog.findViewById(R.id.tv_tenlop_detailscreen);
-            TextView tv_siso_detailscreen      = myClassInfoDialog.findViewById(R.id.tv_siso_detailscreen);
+         TextView tv_tenlop_detailscreen    = myClassInfoDialog.findViewById(R.id.tv_tenlop_detailscreen);
+           TextView tv_siso_detailscreen      = myClassInfoDialog.findViewById(R.id.tv_siso_detailscreen);
           TextView tv_sisonam_detailscreen   = myClassInfoDialog.findViewById(R.id.tv_sisonam_detailscreen);
        TextView tv_sisonu_detailscreen   = myClassInfoDialog.findViewById(R.id.tv_sisonu_detailscreen);
 
-            tv_tenlop_detailscreen.setText(mListFace.get(viewHolder.getAdapterPosition()).getTenLop());
-            tv_siso_detailscreen.setText(String.valueOf(mListFace.get(viewHolder.getAdapterPosition()).getSiSo()));
-            tv_sisonam_detailscreen.setText(String.valueOf(mListFace.get(viewHolder.getAdapterPosition()).getSiSoNam()));
-            tv_sisonu_detailscreen.setText(String.valueOf(mListFace.get(viewHolder.getAdapterPosition()).getSiSoNu()));
+           tv_tenlop_detailscreen.setText(mListFace.get(viewHolder.getAdapterPosition()).getTenLop());
+           tv_siso_detailscreen.setText("Sỉ số"+String.valueOf(mListFace.get(viewHolder.getAdapterPosition()).getSiSo()));
+            tv_sisonam_detailscreen.setText("Nam: "+String.valueOf(mListFace.get(viewHolder.getAdapterPosition()).getSiSoNam()));
+           tv_sisonu_detailscreen.setText("Nữ: "+String.valueOf(mListFace.get(viewHolder.getAdapterPosition()).getSiSoNu()));
             myClassInfoDialog.show();
        }
-    });
+   });
 
 
         return viewHolder;
@@ -84,10 +83,10 @@ public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder
 
 
         viewHolder.tv_tenlop.setText(mListFace.get(i).getTenLop());
-        viewHolder.tv_siso.setText(mListFace.get(i).getSiSo());
-        viewHolder.tv_sisohientai.setText(mListFace.get(i).getSiSoHienTai());
+        viewHolder.tv_siso.setText(String.valueOf(mListFace.get(i).getSiSo()));
+        viewHolder.tv_sisohientai.setText(String.valueOf(mListFace.get(i).getSiSoHienTai()));
 
-//        Drawable img;
+        Drawable img;
 //       if(viewHolder.tv_siso.getText().equals(viewHolder.tv_sisohientai.getText())){
 //           viewHolder.tv_trangthai.setText("Sẵn sàng");
 //           img = context.getResources().getDrawable( R.drawable.ic_checked);
@@ -125,7 +124,7 @@ LinearLayout item_chonlop;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-item_chonlop=itemView.findViewById(R.id.item_chonlop);
+            item_chonlop=itemView.findViewById(R.id.item_chonlop);
             tv_tenlop = itemView.findViewById(R.id.tv_tenlop);
             tv_siso = itemView.findViewById(R.id.tv_siso);
             tv_sisohientai = itemView.findViewById(R.id.tv_sisohientai);
