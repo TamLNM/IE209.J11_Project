@@ -18,7 +18,7 @@ public class MH_ChonLop extends AppCompatActivity {
 
         // Load fragment
         Fragment_ChonLop fm_chonlop = new Fragment_ChonLop();
-        loadFragmentL(fm_chonlop);
+        loadFragment(fm_chonlop);
 
 
 
@@ -63,11 +63,11 @@ public class MH_ChonLop extends AppCompatActivity {
         });
     }
 
-    private boolean loadFragmentL(Fragment_ChonLop fragment) {
+    private boolean loadFragment(Fragment_ChonLop fragment) {
         if (fragment != null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fm_dslop, fragment)
+                    .replace(R.id.fm_dschonlop, fragment)
                     .commit();
             return true;
         }
