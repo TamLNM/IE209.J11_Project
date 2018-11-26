@@ -43,8 +43,8 @@ public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.from(context).inflate(R.layout.item_chonlop, viewGroup, false);//null);
-        //myClassInfoDialog=new Dialog(context);
-        // myClassInfoDialog.setContentView(R.layout.fragment_xacnhanlop);
+        myClassInfoDialog=new Dialog(context);
+        myClassInfoDialog.setContentView(R.layout.fragment_xacnhanlop);
 
         final ViewHolder viewHolder = new ViewHolder(itemView);
         return viewHolder;

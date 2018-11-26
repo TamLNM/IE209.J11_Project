@@ -10,7 +10,7 @@
     <string name="danh_sach_lop">DANH SÁCH LỚP</string>
     <string name="ngaysinh">ngaysinh</string>
     <string name="mshs">mshs</string>
-
+    <string name="dongy">ĐỒNG Ý</string>
 
     ///String bottom nav
     <string name="tenlop">Tên Lớp</string>
