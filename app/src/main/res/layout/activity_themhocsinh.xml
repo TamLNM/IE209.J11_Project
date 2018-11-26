@@ -199,10 +199,10 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="50dp"
                     android:layout_weight="1"
-                    android:background="#bdd1bc"
+                    android:background="@color/tab_background"
                     android:layout_marginBottom="20dp"
                     android:text="TIẾP THEO"
-                    android:textColor="#4e4f51"
+                    android:textColor="#ffffff"
                     android:textStyle="bold" />
 
 
