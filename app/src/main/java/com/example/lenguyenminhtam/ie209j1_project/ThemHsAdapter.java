@@ -94,7 +94,12 @@ public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder
 //           viewHolder.tv_trangthai.setTextColor(Color.parseColor("#56bf1e"));
 //       }
 //       else{
+//              viewHolder.tv_trangthai.setText("Đã đầy");
+//           img = context.getResources().getDrawable( R.drawable.ic_checked);
 //
+//           viewHolder.tv_trangthai.setCompoundDrawables( img, null, null, null );
+//
+//           viewHolder.tv_trangthai.setTextColor(Color.parseColor("#f21d1d"));
 //       }
 
 
