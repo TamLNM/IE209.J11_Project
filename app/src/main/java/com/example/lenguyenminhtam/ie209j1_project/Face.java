@@ -4,6 +4,7 @@ public class Face {
     private String TenLop;
     private int SiSo, SiSoNu, SiSoNam;
 
+
     public Face(String TenLop, int SiSo, int SiSoNu, int SiSoNam){
         this.TenLop     = TenLop;
         this.SiSo       = SiSo;

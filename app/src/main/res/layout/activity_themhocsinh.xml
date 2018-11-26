@@ -16,7 +16,16 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/topBar">
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="TIẾP NHẬN HỌC SINH"
+                android:textAlignment="center"
+                android:gravity="center_vertical"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:background="#003e52"
+                android:textColor="#ffffff"/>
             <android.support.design.widget.AppBarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -31,14 +40,188 @@
             android:layout_above="@+id/bottomBar"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                android:textSize="30sp"
-                android:id="@+id/activityThemHS"
-                android:textAlignment="center" />
+                android:layout_height="match_parent"
+                android:background="#EEEEEE"
+
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:paddingHorizontal="20dp"
+                        android:src="@drawable/ic_man" />
+
+                    <EditText
+                        android:id="@+id/txt_nhaphoten"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:hint="Họ và Tên" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:paddingHorizontal="20dp"
+                        android:src="@drawable/ic_calendar" />
+
+                    <EditText
+                        android:id="@+id/txt_nhapngaysinh"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:drawablePadding="40dp"
+
+                        android:hint="Ngày sinh" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:paddingHorizontal="20dp"
+                        android:src="@drawable/ic_gender" />
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rdo_nam"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                           />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Nam"
+                            android:textSize="19dp"/>
+
+                        <RadioButton
+                            android:id="@+id/rdo_nu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:layout_marginLeft="80dp"
+                            android:layout_weight="1"
+                           />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Nữ"
+                            android:textSize="19dp"/>
+
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:paddingHorizontal="20dp"
+                        android:src="@drawable/ic_email" />
+
+                    <EditText
+                        android:id="@+id/txt_nhapemail"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+
+                        android:hint="Email" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:paddingHorizontal="20dp"
+                        android:src="@drawable/ic_placeholder" />
+
+                    <EditText
+                        android:id="@+id/txt_nhapdiachi"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+
+                        android:hint="Địa chỉ" />
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/btn_themhs"
+                    android:layout_width="300dp"
+                    android:layout_height="10dp"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+
+                    android:layout_weight="1"
+                    android:background="@color/tab_background"
+                    android:layout_marginBottom="190dp"
+                    android:text="TIẾP TỤC"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold" />
+
+
+
+
+
+            </LinearLayout>
+
 
         </RelativeLayout>
 

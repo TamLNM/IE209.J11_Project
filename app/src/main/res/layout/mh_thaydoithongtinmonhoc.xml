@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
@@ -17,17 +18,29 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="THAY ĐỔI THÔNG TIN MÔN HỌC"
-                android:textAlignment="center"
-                android:gravity="center_vertical"
-                android:textSize="18dp"
-                android:textStyle="bold"
-                android:background="#003e52"
-                android:textColor="#ffffff"/>
+                android:orientation="horizontal">
 
+                <TextView
+                    android:layout_width="360dp"
+                    android:layout_height="match_parent"
+                    android:text="THAY ĐỔI THÔNG TIN MÔN HỌC"
+                    android:textAlignment="center"
+                    android:gravity="center_vertical"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:background="#003e52"
+                    android:textColor="#ffffff"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#003e52"
+                    android:id="@+id/imv_ThemMonHoc"
+                    android:src="@drawable/ic_themmoi"/>
+            </LinearLayout>
             <FrameLayout
                 android:id="@+id/fm_dsmonhoc"
                 android:layout_width="match_parent"
