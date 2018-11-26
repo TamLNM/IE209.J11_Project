@@ -58,7 +58,7 @@ public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder
        TextView tv_sisonu_detailscreen   = myClassInfoDialog.findViewById(R.id.tv_sisonu_detailscreen);
 
            tv_tenlop_detailscreen.setText(mListFace.get(viewHolder.getAdapterPosition()).getTenLop());
-           tv_siso_detailscreen.setText("Sỉ số"+String.valueOf(mListFace.get(viewHolder.getAdapterPosition()).getSiSo()));
+           tv_siso_detailscreen.setText("Sỉ số: "+String.valueOf(mListFace.get(viewHolder.getAdapterPosition()).getSiSo()));
             tv_sisonam_detailscreen.setText("Nam: "+String.valueOf(mListFace.get(viewHolder.getAdapterPosition()).getSiSoNam()));
            tv_sisonu_detailscreen.setText("Nữ: "+String.valueOf(mListFace.get(viewHolder.getAdapterPosition()).getSiSoNu()));
             myClassInfoDialog.show();
@@ -91,7 +91,7 @@ public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder
 //            viewHolder.tv_trangthai.setText(context.getResources().getString(R.string.sansang));
 //            img = context.getResources().getDrawable( R.drawable.ic_checked);
 //
-//            viewHolder.tv_trangthai.setCompoundDrawables( img, null, null, null );
+//            //.tv_trangthai.setCompoundDrawables( img, null, null, null );
 //
 //            viewHolder.tv_trangthai.setTextColor(Color.parseColor("#56bf1e"));
 //        }
@@ -102,7 +102,7 @@ public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder
 //
 //            //viewHolder.tv_trangthai.setCompoundDrawables( img, null, null, null );
 //
-//            //viewHolder.tv_trangthai.setTextColor(Color.parseColor("#f21d1d"));
+//            viewHolder.tv_trangthai.setTextColor(Color.parseColor("#f21d1d"));
 //        }
 
 
