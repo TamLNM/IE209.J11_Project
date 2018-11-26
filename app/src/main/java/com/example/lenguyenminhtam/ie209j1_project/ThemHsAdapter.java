@@ -87,23 +87,25 @@ public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder
         viewHolder.tv_sisohientai.setText(String.valueOf(mListFace.get(i).getSiSoHienTai()));
 
         Drawable img;
-//        if(viewHolder.tv_siso.getText().toString().equals(viewHolder.tv_sisohientai.getText().toString())){
-//            viewHolder.tv_trangthai.setText(context.getResources().getString(R.string.sansang));
-//            img = context.getResources().getDrawable( R.drawable.ic_checked);
-//
-//            //.tv_trangthai.setCompoundDrawables( img, null, null, null );
-//
-//            viewHolder.tv_trangthai.setTextColor(Color.parseColor("#56bf1e"));
-//        }
-//        else{
-//
-//            viewHolder.tv_trangthai.setText(context.getResources().getString(R.string.daday));
-//            img = context.getResources().getDrawable( R.drawable.ic_multiply);
-//
-//            //viewHolder.tv_trangthai.setCompoundDrawables( img, null, null, null );
-//
-//            viewHolder.tv_trangthai.setTextColor(Color.parseColor("#f21d1d"));
-//        }
+        if(viewHolder.tv_siso.getText().toString().equals(viewHolder.tv_sisohientai.getText().toString())){
+       viewHolder.tv_trangthai.setText(context.getResources().getString(R.string.sansang));
+            //img = context.getResources().getDrawable( R.drawable.ic_checked);
+//viewHolder.tv_trangthai.setText("Sẵn sàng");
+            //viewHolder.tv_trangthai.setCompoundDrawables( img, null, null, null );
+viewHolder.img_trangthai.setImageResource(R.drawable.ic_checked);
+           viewHolder.tv_trangthai.setTextColor(Color.parseColor("#56bf1e"));
+        }
+        else{
+            viewHolder.img_trangthai.setImageResource(R.drawable.ic_multiply);
+//viewHolder.tv_trangthai.setText("Đã đầy");
+
+        viewHolder.tv_trangthai.setText(context.getResources().getString(R.string.daday));
+            //img = context.getResources().getDrawable( R.drawable.ic_multiply);
+
+            //viewHolder.tv_trangthai.setCompoundDrawables( img, null, null, null );
+
+           viewHolder.tv_trangthai.setTextColor(Color.parseColor("#f21d1d"));
+        }
 
 
 
@@ -120,7 +122,7 @@ public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder
 
         TextView tv_tenlop, tv_siso, tv_sisohientai, tv_trangthai;
 LinearLayout item_chonlop;
-
+ImageView img_trangthai;
         private ItemClickListener itemClickListener;
 
         public ViewHolder(@NonNull View itemView) {
@@ -129,7 +131,8 @@ LinearLayout item_chonlop;
             tv_tenlop = itemView.findViewById(R.id.tv_tenlop);
             tv_siso = itemView.findViewById(R.id.tv_siso);
             tv_sisohientai = itemView.findViewById(R.id.tv_sisohientai);
-            tv_trangthai=itemView.findViewWithTag(R.id.tv_trangthai);
+            tv_trangthai=itemView.findViewById(R.id.tv_trangthai);
+            img_trangthai=itemView.findViewById(R.id.img_trangthai);
             // On recycler item click
             itemView.setOnClickListener(this);
             itemView.setOnLongClickListener(this);
