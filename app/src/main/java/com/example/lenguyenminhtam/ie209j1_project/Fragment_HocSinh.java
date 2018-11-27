@@ -26,12 +26,12 @@ public class Fragment_HocSinh extends Fragment{
 
         lsthocsinh = new ArrayList<>();
         //lsthocsinh.add(new hocsinh("","","","","","","",0,0,0,0));
-        lsthocsinh.add(new HocSinh("10001","Phạm Thành An","10A1","Nam","P.Linh Đông, Q.Thủ Đức, TPHCM", "12-03-1997","anpt@gmai.com",R.drawable.if_male3_403019,R.drawable.masculine,R.drawable.calendar,R.drawable.placeholder));
-        lsthocsinh.add(new HocSinh("10002","Lại Văn Cử","10A1","Nam","P.Linh Trung, Q.Thủ Đức, TPHCM", "20-03-1997","laivancu@gmail.com",R.drawable.if_male3_403019,R.drawable.masculine,R.drawable.calendar,R.drawable.placeholder));
-        lsthocsinh.add(new HocSinh("10003","Nguyễn Ngọc Đào","10A2","Nữ","P.Bình Chiểu, Q.Thủ Đức, TPHCM", "12-09-1997","daonn@gmai.com",R.drawable.if_female1_403023,R.drawable.femenine,R.drawable.calendar,R.drawable.placeholder));
-        lsthocsinh.add(new HocSinh("10004","Nguyễn Minh Hậu","10A1","Nam","P.Linh Đông, Q.Thủ Đức, TPHCM", "12-03-1997","haunm@gmai.com",R.drawable.if_male3_403019,R.drawable.masculine,R.drawable.calendar,R.drawable.placeholder));
-        lsthocsinh.add(new HocSinh("10005","Trần Văn Minh","10a2","Nam","P.Linh Trung, Q.Thủ Đức, TPHCM", "20-03-1997","minhtv@gmail.com",R.drawable.if_male3_403019,R.drawable.masculine,R.drawable.calendar,R.drawable.placeholder));
-        lsthocsinh.add(new HocSinh("10006","Nguyễn Thị Phụng","10a1","Nữ","P.Bình Chiểu, Q.Thủ Đức, TPHCM", "12-09-1997","phungnt@gmail.com",R.drawable.if_female1_403023,R.drawable.femenine,R.drawable.calendar,R.drawable.placeholder));
+        lsthocsinh.add(new HocSinh("10001","Phạm Thành An","10A1","Nam","P.Linh Đông, Q.Thủ Đức, TPHCM", "12-03-1997","anpt@gmai.com",R.drawable.if_male3_403019));
+        lsthocsinh.add(new HocSinh("10002","Lại Văn Cử","10A1","Nam","P.Linh Trung, Q.Thủ Đức, TPHCM", "20-03-1997","laivancu@gmail.com",R.drawable.if_male3_403019));
+        lsthocsinh.add(new HocSinh("10003","Nguyễn Ngọc Đào","10A2","Nữ","P.Bình Chiểu, Q.Thủ Đức, TPHCM", "12-09-1997","daonn@gmai.com",R.drawable.if_female1_403023));
+        lsthocsinh.add(new HocSinh("10004","Nguyễn Minh Hậu","10A1","Nam","P.Linh Đông, Q.Thủ Đức, TPHCM", "12-03-1997","haunm@gmai.com",R.drawable.if_male3_403019));
+        lsthocsinh.add(new HocSinh("10005","Trần Văn Minh","10a2","Nam","P.Linh Trung, Q.Thủ Đức, TPHCM", "20-03-1997","minhtv@gmail.com",R.drawable.if_male3_403019));
+        lsthocsinh.add(new HocSinh("10006","Nguyễn Thị Phụng","10a1","Nữ","P.Bình Chiểu, Q.Thủ Đức, TPHCM", "12-09-1997","phungnt@gmail.com",R.drawable.if_female1_403023));
 
 
     }

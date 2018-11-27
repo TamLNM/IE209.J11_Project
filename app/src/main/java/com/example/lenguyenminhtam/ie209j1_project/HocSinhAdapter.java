@@ -73,9 +73,14 @@ public class HocSinhAdapter extends RecyclerView.Adapter<HocSinhAdapter.MyViewHo
         myViewHolder.tv_ngaysinh.setText(mData.get(i).getNgaysinh());
         myViewHolder.tv_gioitinh.setText(mData.get(i).getGioitinh());
         myViewHolder.tv_diachi.setText(mData.get(i).getDiachi());
-        myViewHolder.iv_gioitinh.setImageResource(mData.get(i).getIc_gioitinh());
-        myViewHolder.iv_avatar.setImageResource(mData.get(i).getAvatar());
 
+        myViewHolder.iv_avatar.setImageResource(mData.get(i).getAvatar());
+if (myViewHolder.tv_gioitinh.getText().toString().equals("Nam")){
+    myViewHolder.iv_gioitinh.setImageResource(R.drawable.ic_masculine);
+}
+        if (myViewHolder.tv_gioitinh.getText().toString().equals("Nữ")){
+            myViewHolder.iv_gioitinh.setImageResource(R.drawable.ic_femenine);
+        }
     }
 
     @Override
@@ -93,8 +98,7 @@ public class HocSinhAdapter extends RecyclerView.Adapter<HocSinhAdapter.MyViewHo
 
         private ImageView iv_avatar;
         private ImageView iv_gioitinh;
-        private ImageView iv_diachi;
-        private ImageView iv_ngaysinh;
+
         private RelativeLayout item_dshs;
 
         public MyViewHolder(@NonNull View itemView) {
@@ -108,8 +112,7 @@ public class HocSinhAdapter extends RecyclerView.Adapter<HocSinhAdapter.MyViewHo
             tv_ngaysinh=(TextView)itemView.findViewById(R.id.txt_ngaysinh);
             iv_avatar=(ImageView)itemView.findViewById(R.id.img_hs);
             iv_gioitinh=(ImageView)itemView.findViewById(R.id.img_gioitinh);
-            iv_diachi=(ImageView)itemView.findViewById(R.id.img_diachi);
-            iv_ngaysinh=(ImageView)itemView.findViewById(R.id.img_ngaysinh);
+
 
         }
     }
