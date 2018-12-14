@@ -1112,8 +1112,16 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         String drop_hocsinh = String.format("DROP TABLE IF EXISTS `hocsinh`;");
         String drop_lop = String.format("DROP TABLE IF EXISTS `lop`;");
+        String drop_loaidiem = String.format("DROP TABLE IF EXISTS `loaidiem`;");
+        String drop_monhoc = String.format("DROP TABLE IF EXISTS `monhoc`;");
+        String drop_ketquahoctap = String.format("DROP TABLE IF EXISTS `ketquahoctap`;");
+        String drop_chitietketqua = String.format("DROP TABLE IF EXISTS `chitietketqua`;");
         db.execSQL(drop_hocsinh);
         db.execSQL(drop_lop);
+        db.execSQL(drop_loaidiem);
+        db.execSQL(drop_monhoc);
+        db.execSQL(drop_ketquahoctap);
+        db.execSQL(drop_chitietketqua);
     }
 
     public boolean insertHocSinh(String mshs, String hotenhs, String gioitinh, String ngaysinh, String diachi, String email, String malop) {
