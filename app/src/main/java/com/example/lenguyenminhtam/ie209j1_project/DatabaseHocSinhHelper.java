@@ -1093,6 +1093,15 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
                 "(2161220322, 21612203, 505, 402, 7),\n" +
                 "(2161220323, 21612203, 505, 403, 8),\n" +
                 "(2161220324, 21612203, 505, 404, 9);");
+        String alter_hocsinh = String.format("ALTER TABLE `hocsinh`\n" +
+                "  ADD CONSTRAINT `hocsinh_ibfk_1` FOREIGN KEY (`MaLop`) REFERENCES `lop` (`MaLop`);");
+        String alter_chitietketqua =String.format("ALTER TABLE `chitietketqua`\n" +
+                "  ADD CONSTRAINT `chitietketqua_ibfk_1` FOREIGN KEY (`MaKQHT`) REFERENCES `ketquahoctap` (`MaKQHT`),\n" +
+                "  ADD CONSTRAINT `chitietketqua_ibfk_2` FOREIGN KEY (`MaKQHT`) REFERENCES `ketquahoctap` (`MaKQHT`),\n" +
+                "  ADD CONSTRAINT `chitietketqua_ibfk_3` FOREIGN KEY (`MaLoaiDiem`) REFERENCES `loaidiem` (`MaLoaiDiem`),\n" +
+                "  ADD CONSTRAINT `chitietketqua_ibfk_4` FOREIGN KEY (`MaMonHoc`) REFERENCES `monhoc` (`MaMonHoc`);");
+        String alter_ketquahoctap = String.format("ALTER TABLE `ketquahoctap`\n" +
+                "  ADD CONSTRAINT `ketquahoctap_ibfk_1` FOREIGN KEY (`MSHS`) REFERENCES `hocsinh` (`MSHS`);");
         db.execSQL(create_table_hocsinh);
         db.execSQL(create_table_lop);
         db.execSQL(insert_hocsinh);
@@ -1105,7 +1114,9 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
         db.execSQL(insert_ketquahoctap);
         db.execSQL(create_table_chitietketqua);
         db.execSQL(insert_chitietketqua);
-
+        db.execSQL(alter_chitietketqua);
+        db.execSQL(alter_hocsinh);
+        db.execSQL(alter_ketquahoctap);
     }
 
     @Override

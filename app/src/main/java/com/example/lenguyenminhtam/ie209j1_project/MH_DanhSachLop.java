@@ -1,6 +1,7 @@
 package com.example.lenguyenminhtam.ie209j1_project;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -14,13 +15,15 @@ public class MH_DanhSachLop extends  AppCompatActivity {
     private static final String TAG = "MH_DanhSachLop";
     private ViewPager vp;
     DatabaseHocSinhHelper hocsinhdb;
+    private SQLiteDatabase mDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mh_danhsachlop);
         initView();
         hocsinhdb= new DatabaseHocSinhHelper(this);
-
+        mDatabase = hocsinhdb.getWritableDatabase();
         ////bottom
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
