@@ -53,7 +53,7 @@ public class HocSinhAdapter extends RecyclerView.Adapter<HocSinhAdapter.MyViewHo
                 TextView txt_email=(TextView) myDialog.findViewById(R.id.txt_email);
                 Button btn_xembangdiem=(Button)myDialog.findViewById(R.id.btn_xembangdiem);
 
-                img_hs1.setImageResource(mData.get(viewHolder.getAdapterPosition()).getAvatar());
+                //img_hs1.setImageResource(mData.get(viewHolder.getAdapterPosition()).getAvatar());
                 txt_hoten1.setText(mData.get(viewHolder.getAdapterPosition()).getHoten());
                 txt_lop.setText(mData.get(viewHolder.getAdapterPosition()).getLop());
                 txt_gioitinh.setText(mData.get(viewHolder.getAdapterPosition()).getGioitinh());
@@ -74,13 +74,16 @@ public class HocSinhAdapter extends RecyclerView.Adapter<HocSinhAdapter.MyViewHo
         myViewHolder.tv_gioitinh.setText(mData.get(i).getGioitinh());
         myViewHolder.tv_diachi.setText(mData.get(i).getDiachi());
 
-        myViewHolder.iv_avatar.setImageResource(mData.get(i).getAvatar());
+        //myViewHolder.iv_avatar.setImageResource(mData.get(i).getAvatar());
 if (myViewHolder.tv_gioitinh.getText().toString().equals("Nam")){
     myViewHolder.iv_gioitinh.setImageResource(R.drawable.ic_masculine);
+    myViewHolder.iv_avatar.setImageResource(R.drawable.if_male3_403019);
 }
         if (myViewHolder.tv_gioitinh.getText().toString().equals("Nữ")){
             myViewHolder.iv_gioitinh.setImageResource(R.drawable.ic_femenine);
+            myViewHolder.iv_avatar.setImageResource(R.drawable.if_female1_403023);
         }
+
     }
 
     @Override

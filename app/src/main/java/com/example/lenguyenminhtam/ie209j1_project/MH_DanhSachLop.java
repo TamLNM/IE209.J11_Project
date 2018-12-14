@@ -13,13 +13,13 @@ import android.view.MenuItem;
 public class MH_DanhSachLop extends  AppCompatActivity {
     private static final String TAG = "MH_DanhSachLop";
     private ViewPager vp;
-
+    DatabaseHocSinhHelper hocsinhdb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mh_danhsachlop);
         initView();
-
+        hocsinhdb= new DatabaseHocSinhHelper(this);
 
         ////bottom
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);

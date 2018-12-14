@@ -10,7 +10,7 @@ public class HocSinh {
 
     private String email;
 
-    private int avatar;
+    //private int avatar;
 
 
     public HocSinh() {
@@ -24,9 +24,9 @@ public class HocSinh {
         return gioitinh;
     }
 
-    public int getAvatar() {
-        return avatar;
-    }
+//    public int getAvatar() {
+//        return avatar;
+//    }
 
 
     public String getDiachi() {
@@ -64,7 +64,7 @@ public class HocSinh {
         return lop;
     }
 
-    public HocSinh(String mshs, String hoten, String lop, String gioitinh, String diachi, String ngaysinh, String email, int avatar) {
+    public HocSinh(String mshs, String hoten, String lop, String gioitinh, String diachi, String ngaysinh, String email) {
         this.mshs= mshs;
         this.email=email;
         this.lop=lop;
@@ -73,7 +73,7 @@ public class HocSinh {
         this.gioitinh = gioitinh;
         this.diachi = diachi;
         this.ngaysinh = ngaysinh;
-        this.avatar = avatar;
+        //this.avatar = avatar;
 
     }
 
@@ -93,9 +93,9 @@ public class HocSinh {
         this.ngaysinh = ngaysinh;
     }
 
-    public void setAvatar(int avatar) {
-        this.avatar = avatar;
-    }
+//    public void setAvatar(int avatar) {
+//        this.avatar = avatar;
+//    }
 
 
 }
