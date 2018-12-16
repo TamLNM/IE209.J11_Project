@@ -47,13 +47,26 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
     @Override
 
     public void onCreate(SQLiteDatabase db) {
-        String create_table_hocsinh = String.format("CREATE TABLE IF NOT EXISTS hocsinh ('MSHS' bigint(20) NOT NULL, " +
-                "'HoTenHS' varchar(100)NOT NULL, 'GioiTinh' varchar(5) NOT NULL, 'NgaySinh' date NOT NULL," +
-                "'DiaChi' varchar(100) NOT NULL, 'Email' varchar(100) NOT NULL, 'MaLop' bigint(20) NOT NULL," +
-                "PRIMARY KEY ('MSHS')),KEY 'MaLop' ('MaLop') ENGINE=InnoDB DEFAULT CHARSET=utf8;");
-        String create_table_lop = String.format("CREATE TABLE IF NOT EXISTS lop ('MaLop' bigint(20) NOT NULL, \" +\n" +
-                "                \"'TenLop' varchar(20)NOT NULL, 'SiSo' int(11) NOT NULL, 'NamHoc' varchar(15) NOT NULL,\" +\n" +
-                "                 \"PRIMARY KEY ('MaLop')) ENGINE=InnoDB DEFAULT CHARSET=utf8;");
+        String create_table_lop = String.format("CREATE TABLE IF NOT EXISTS `lop` (\n" +
+                "  `MaLop` bigint(20) NOT NULL,\n" +
+                "  `TenLop` varchar(20) NOT NULL,\n" +
+                "  `SiSo` int(11) NOT NULL,\n" +
+                "  `NamHoc` varchar(15) NOT NULL,\n" +
+                "  PRIMARY KEY (`MaLop`)\n" +
+                " FOREIGN KEY (`MaLop`) REFERENCES `lop` (`MaLop`) \n" +
+                ") ;");
+        String create_table_hocsinh = String.format("CREATE TABLE IF NOT EXISTS `hocsinh` (\n" +
+                "  `MSHS` bigint(20) NOT NULL,\n" +
+                "  `HoTenHS` varchar(100) NOT NULL,\n" +
+                "  `GioiTinh` varchar(5) NOT NULL,\n" +
+                "  `NgaySinh` date NOT NULL,\n" +
+                "  `DiaChi` varchar(100) NOT NULL,\n" +
+                "  `Email` varchar(75) NOT NULL,\n" +
+                "  `MaLop` bigint(20) NOT NULL,\n" +
+                "  PRIMARY KEY (`MSHS`)\n" +
+
+                ") ;");
+
         String insert_hocsinh = String.format("INSERT INTO `hocsinh` (`MSHS`, `HoTenHS`, `GioiTinh`, `NgaySinh`, `DiaChi`, `Email`, `MaLop`) VALUES\n" +
                 "(1610101, 'Hoàng Bảo Anh', 'Nữ', '1996-12-04', '123/3 đường Lê Lợi, phường Bến Nghé, Quận 1, thành phố Hồ Chí Minh', '1610101@gmail.com', 16101),\n" +
                 "(1610102, 'Nguyễn Bảo Anh', 'Nữ', '1996-06-06', '123/5B đường Lê Lợi, phường 6, thành phố Tuy Hòa, tỉnh Phú Yên', '1610102@gmail.com', 16101),\n" +
@@ -154,9 +167,9 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
                 "(16122, '12B', 3, '2016 - 2017');");
         String create_table_loaidiem = String.format("CREATE TABLE IF NOT EXISTS `loaidiem` (\n" +
                 "  `MaLoaiDiem` bigint(20) NOT NULL,\n" +
-                "  `TenLoaiDiem` varchar(100) CHARACTER SET utf8mb4 NOT NULL,\n" +
+                "  `TenLoaiDiem` varchar(100) NOT NULL,\n" +
                 "  PRIMARY KEY (`MaLoaiDiem`)\n" +
-                ") ENGINE=InnoDB DEFAULT CHARSET=utf8;");
+                ") ;");
         String insert_loaidiem = String.format("INSERT INTO `loaidiem` (`MaLoaiDiem`, `TenLoaiDiem`) VALUES\n" +
                 "(401, 'Miệng'),\n" +
                 "(402, '15 phút'),\n" +
@@ -166,7 +179,7 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
                 "  `MaMonHoc` bigint(20) NOT NULL,\n" +
                 "  `TenMonHoc` varchar(100) NOT NULL,\n" +
                 "  PRIMARY KEY (`MaMonHoc`)\n" +
-                ") ENGINE=InnoDB DEFAULT CHARSET=utf8;");
+                ") ;");
         String insert_monhoc = String.format("INSERT INTO `monhoc` (`MaMonHoc`, `TenMonHoc`) VALUES\n" +
                 "(501, 'Toán'),\n" +
                 "(502, 'Lý'),\n" +
@@ -179,9 +192,9 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
                 "  `HocKy` varchar(5) NOT NULL,\n" +
                 "  `NamHoc` varchar(15) NOT NULL,\n" +
                 "  `TBCacMon` float NOT NULL,\n" +
-                "  PRIMARY KEY (`MaKQHT`),\n" +
-                "  KEY `MSHS` (`MSHS`)\n" +
-                ") ENGINE=InnoDB DEFAULT CHARSET=utf8;");
+                "  PRIMARY KEY (`MaKQHT`)\n" +
+
+                ") ;");
         String insert_ketquahoctap = String.format("INSERT INTO `ketquahoctap` (`MaKQHT`, `MSHS`, `HocKy`, `NamHoc`, `TBCacMon`) VALUES\n" +
                 "(11610101, 1610101, 'HK1', '2016 - 2017', 0),\n" +
                 "(11610102, 1610102, 'HK1', '2016 - 2017', 0),\n" +
@@ -226,10 +239,11 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
                 "  `MaLoaiDiem` bigint(20) NOT NULL,\n" +
                 "  `DiemSo` float NOT NULL,\n" +
                 "  PRIMARY KEY (`MaCTKQ`),\n" +
-                "  KEY `MaKQHT` (`MaKQHT`),\n" +
-                "  KEY `MaLoaiDiem` (`MaLoaiDiem`),\n" +
-                "  KEY `MaMonHoc` (`MaMonHoc`)\n" +
-                ") ENGINE=InnoDB DEFAULT CHARSET=utf8;");
+                "FOREIGN KEY (`MaKQHT`) REFERENCES `ketquahoctap` (`MaKQHT`),\n" +
+
+        "  FOREIGN KEY (`MaLoaiDiem`) REFERENCES `loaidiem` (`MaLoaiDiem`),\n" +
+                "  FOREIGN KEY (`MaMonHoc`) REFERENCES `monhoc` (`MaMonHoc`)\n"+
+                ") ;");
         String insert_chitietketqua = String.format("INSERT INTO `chitietketqua` (`MaCTKQ`, `MaKQHT`, `MaMonHoc`, `MaLoaiDiem`, `DiemSo`) VALUES\n" +
                 "(1161010101, 11610101, 501, 401, 7),\n" +
                 "(1161010102, 11610101, 501, 402, 8),\n" +
@@ -1093,17 +1107,18 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
                 "(2161220322, 21612203, 505, 402, 7),\n" +
                 "(2161220323, 21612203, 505, 403, 8),\n" +
                 "(2161220324, 21612203, 505, 404, 9);");
-        String alter_hocsinh = String.format("ALTER TABLE `hocsinh`\n" +
-                "  ADD CONSTRAINT `hocsinh_ibfk_1` FOREIGN KEY (`MaLop`) REFERENCES `lop` (`MaLop`);");
-        String alter_chitietketqua =String.format("ALTER TABLE `chitietketqua`\n" +
-                "  ADD CONSTRAINT `chitietketqua_ibfk_1` FOREIGN KEY (`MaKQHT`) REFERENCES `ketquahoctap` (`MaKQHT`),\n" +
-                "  ADD CONSTRAINT `chitietketqua_ibfk_2` FOREIGN KEY (`MaKQHT`) REFERENCES `ketquahoctap` (`MaKQHT`),\n" +
-                "  ADD CONSTRAINT `chitietketqua_ibfk_3` FOREIGN KEY (`MaLoaiDiem`) REFERENCES `loaidiem` (`MaLoaiDiem`),\n" +
-                "  ADD CONSTRAINT `chitietketqua_ibfk_4` FOREIGN KEY (`MaMonHoc`) REFERENCES `monhoc` (`MaMonHoc`);");
-        String alter_ketquahoctap = String.format("ALTER TABLE `ketquahoctap`\n" +
-                "  ADD CONSTRAINT `ketquahoctap_ibfk_1` FOREIGN KEY (`MSHS`) REFERENCES `hocsinh` (`MSHS`);");
-        db.execSQL(create_table_hocsinh);
+//        String alter_hocsinh = String.format("ALTER TABLE `hocsinh`\n" +
+//                "  ADD CONSTRAINT `hocsinh_ibfk_1` FOREIGN KEY (`MaLop`) REFERENCES `lop` (`MaLop`);");
+//        String alter_chitietketqua =String.format("ALTER TABLE `chitietketqua`\n" +
+//                "  ADD CONSTRAINT `chitietketqua_ibfk_1` FOREIGN KEY (`MaKQHT`) REFERENCES `ketquahoctap` (`MaKQHT`),\n" +
+//
+//                "  ADD CONSTRAINT `chitietketqua_ibfk_2` FOREIGN KEY (`MaLoaiDiem`) REFERENCES `loaidiem` (`MaLoaiDiem`),\n" +
+//                "  ADD CONSTRAINT `chitietketqua_ibfk_3` FOREIGN KEY (`MaMonHoc`) REFERENCES `monhoc` (`MaMonHoc`);");
+//        String alter_ketquahoctap = String.format("ALTER TABLE `ketquahoctap`\n" +
+//                "  ADD CONSTRAINT `ketquahoctap_ibfk_1` FOREIGN KEY (`MSHS`) REFERENCES `hocsinh` (`MSHS`);");
         db.execSQL(create_table_lop);
+        db.execSQL(create_table_hocsinh);
+
         db.execSQL(insert_hocsinh);
         db.execSQL(insert_lop);
         db.execSQL(create_table_loaidiem);
@@ -1114,9 +1129,9 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
         db.execSQL(insert_ketquahoctap);
         db.execSQL(create_table_chitietketqua);
         db.execSQL(insert_chitietketqua);
-        db.execSQL(alter_chitietketqua);
-        db.execSQL(alter_hocsinh);
-        db.execSQL(alter_ketquahoctap);
+       // db.execSQL(alter_chitietketqua);
+        //db.execSQL(alter_hocsinh);
+       // db.execSQL(alter_ketquahoctap);
     }
 
     @Override
