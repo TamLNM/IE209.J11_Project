@@ -1,9 +1,14 @@
 package com.example.lenguyenminhtam.ie209j1_project;
 import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.content.Context;
+
+import java.util.ArrayList;
+
 public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "quanlyhocsinh";
     public static final String hocsinh = "hocsinh";
@@ -1240,5 +1245,38 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
         else
             return true;
     }
+    public ArrayList<HocSinh> retrieveHocSinh(String malop){
+        ArrayList<HocSinh> hocSinhs=new ArrayList<>();
+        try{
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor cursor=db.rawQuery("SELECT * FROM hocsinh WHERE MaLop IN ("+malop+")",null);
+
+            HocSinh hocSinh;
+            hocSinhs.clear();
+            while (cursor.moveToNext()){
+                String s_mshs=cursor.getString(0);
+                String s_hotenhs=cursor.getString(1);
+                String s_gioitinh=cursor.getString(2);
+                String s_ngaysinh=cursor.getString(3);
+                String s_diachi=cursor.getString(4);
+                String s_email=cursor.getString(5);
+                String s_malop=cursor.getString(6);
+    hocSinh=new HocSinh();
+                hocSinh.setMshs(s_mshs);
+                hocSinh.setHoten(s_hotenhs);
+                hocSinh.setGioitinh(s_gioitinh);
+                hocSinh.setNgaysinh(s_ngaysinh);
+                hocSinh.setDiachi(s_diachi);
+                hocSinh.setEmail(s_email);
+                hocSinh.setLop(s_malop);
+                hocSinhs.add(hocSinh);
+            }
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        return hocSinhs;
+    }
+
 }
 

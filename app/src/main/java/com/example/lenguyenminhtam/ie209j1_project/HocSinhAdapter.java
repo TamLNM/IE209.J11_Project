@@ -2,11 +2,13 @@ package com.example.lenguyenminhtam.ie209j1_project;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -19,14 +21,17 @@ import java.util.List;
 
 public class HocSinhAdapter extends RecyclerView.Adapter<HocSinhAdapter.MyViewHolder>{
     Context mContext;
-    List<HocSinh> mData;
+    ArrayAdapter<HocSinh> mData;
     Dialog myDialog;
-
-    public HocSinhAdapter(Context mContext, List<HocSinh> mData) {
+Cursor hscursor;
+    public HocSinhAdapter(Context mContext, ArrayAdapter<HocSinh> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
-
+public HocSinhAdapter(Context mContext, Cursor mCursor){
+        this.mContext=mContext;
+        this.hscursor=mCursor;
+}
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -54,12 +59,12 @@ public class HocSinhAdapter extends RecyclerView.Adapter<HocSinhAdapter.MyViewHo
                 Button btn_xembangdiem=(Button)myDialog.findViewById(R.id.btn_xembangdiem);
 
                 //img_hs1.setImageResource(mData.get(viewHolder.getAdapterPosition()).getAvatar());
-                txt_hoten1.setText(mData.get(viewHolder.getAdapterPosition()).getHoten());
-                txt_lop.setText(mData.get(viewHolder.getAdapterPosition()).getLop());
-                txt_gioitinh.setText(mData.get(viewHolder.getAdapterPosition()).getGioitinh());
-                txt_diachi.setText(mData.get(viewHolder.getAdapterPosition()).getDiachi());
-                txt_email.setText(mData.get(viewHolder.getAdapterPosition()).getEmail());
-                txt_ngaysinh.setText(mData.get(viewHolder.getAdapterPosition()).getNgaysinh());
+                txt_hoten1.setText(mData.getItem(viewHolder.getAdapterPosition()).getHoten());
+                txt_lop.setText(mData.getItem(viewHolder.getAdapterPosition()).getLop());
+                txt_gioitinh.setText(mData.getItem(viewHolder.getAdapterPosition()).getGioitinh());
+                txt_diachi.setText(mData.getItem(viewHolder.getAdapterPosition()).getDiachi());
+                txt_email.setText(mData.getItem(viewHolder.getAdapterPosition()).getEmail());
+                txt_ngaysinh.setText(mData.getItem(viewHolder.getAdapterPosition()).getNgaysinh());
                 myDialog.show();
             }
         });
@@ -68,11 +73,13 @@ public class HocSinhAdapter extends RecyclerView.Adapter<HocSinhAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        myViewHolder.tv_mshs.setText(mData.get(i).getMshs());
-        myViewHolder.tv_hoten.setText(mData.get(i).getHoten());
-        myViewHolder.tv_ngaysinh.setText(mData.get(i).getNgaysinh());
-        myViewHolder.tv_gioitinh.setText(mData.get(i).getGioitinh());
-        myViewHolder.tv_diachi.setText(mData.get(i).getDiachi());
+
+
+        myViewHolder.tv_mshs.setText(mData.getItem(i).getMshs());
+        myViewHolder.tv_hoten.setText(mData.getItem(i).getHoten());
+        myViewHolder.tv_ngaysinh.setText(mData.getItem(i).getNgaysinh());
+        myViewHolder.tv_gioitinh.setText(mData.getItem(i).getGioitinh());
+        myViewHolder.tv_diachi.setText(mData.getItem(i).getDiachi());
 
         //myViewHolder.iv_avatar.setImageResource(mData.get(i).getAvatar());
 if (myViewHolder.tv_gioitinh.getText().toString().equals("Nam")){
@@ -88,7 +95,7 @@ if (myViewHolder.tv_gioitinh.getText().toString().equals("Nam")){
 
     @Override
     public int getItemCount() {
-        return mData.size();
+        return mData.getCount();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{

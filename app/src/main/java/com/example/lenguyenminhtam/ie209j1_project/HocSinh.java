@@ -64,7 +64,7 @@ public class HocSinh {
         return lop;
     }
 
-    public HocSinh(String mshs, String hoten, String lop, String gioitinh, String diachi, String ngaysinh, String email) {
+    public HocSinh(String mshs, String hoten, String gioitinh , String ngaysinh, String diachi, String email, String lop) {
         this.mshs= mshs;
         this.email=email;
         this.lop=lop;
