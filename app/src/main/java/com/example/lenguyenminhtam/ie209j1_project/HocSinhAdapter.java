@@ -65,6 +65,14 @@ public HocSinhAdapter(Context mContext, Cursor mCursor){
                 txt_diachi.setText(mData.getItem(viewHolder.getAdapterPosition()).getDiachi());
                 txt_email.setText(mData.getItem(viewHolder.getAdapterPosition()).getEmail());
                 txt_ngaysinh.setText(mData.getItem(viewHolder.getAdapterPosition()).getNgaysinh());
+                if (txt_gioitinh.getText().toString().equals("Nam")){
+
+                    img_hs1.setImageResource(R.drawable.if_male3_403019);
+                }
+                if (txt_gioitinh.getText().toString().equals("Nữ")){
+
+                   img_hs1.setImageResource(R.drawable.if_female1_403023);
+                }
                 myDialog.show();
             }
         });
