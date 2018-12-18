@@ -32,6 +32,7 @@ public class ThemHocSinhActivity extends AppCompatActivity {
     EditText txt_nhapdiachi;
     Calendar c;
     DatePickerDialog dpd_ngaysinh;
+    Button btn_themhs;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,8 +49,8 @@ public class ThemHocSinhActivity extends AppCompatActivity {
         txt_nhapdiachi = findViewById(R.id.txt_nhapdiachi);
 
 
-        Button button = (Button) findViewById(R.id.btn_themhs);
-        button.setOnClickListener(new View.OnClickListener() {
+        btn_themhs =  findViewById(R.id.btn_themhs);
+        btn_themhs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 navigateToChonLop();

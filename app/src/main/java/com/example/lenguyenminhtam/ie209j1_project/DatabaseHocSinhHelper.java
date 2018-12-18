@@ -52,6 +52,7 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
     @Override
 
     public void onCreate(SQLiteDatabase db) {
+
         String create_table_lop = String.format("CREATE TABLE IF NOT EXISTS `lop` (\n" +
                 "  `MaLop` bigint(20) NOT NULL,\n" +
                 "  `TenLop` varchar(20) NOT NULL,\n" +
@@ -164,12 +165,12 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
                 "(1612214, 'Lê Thị Trang', 'Nữ', '1994-10-10', '61 Đặng Văn Bi, Bình Thọ, Thủ Đức, Hồ Chí Minh', '1511129@gmail.com', 16122),\n" +
                 "(1612215, 'Lê Trọng Hoàng', 'Nam', '1994-12-08', '62 Đặng Văn Bi, Bình Thọ, Thủ Đức, Hồ Chí Minh', '1511130@gmail.com', 16122);");
         String insert_lop = String.format("INSERT INTO `lop` (`MaLop`, `TenLop`, `SiSo`, `NamHoc`) VALUES\n" +
-                "(16101, '10A', 3, '2016 - 2017'),\n" +
-                "(16102, '10B', 3, '2016 - 2017'),\n" +
-                "(16111, '11A', 3, '2016 - 2017'),\n" +
-                "(16112, '11B', 3, '2016 - 2017'),\n" +
-                "(16121, '12A', 3, '2016 - 2017'),\n" +
-                "(16122, '12B', 3, '2016 - 2017');");
+                "(16101, '10A', 15, '2016 - 2017'),\n" +
+                "(16102, '10B', 20, '2016 - 2017'),\n" +
+                "(16111, '11A', 18, '2016 - 2017'),\n" +
+                "(16112, '11B', 15, '2016 - 2017'),\n" +
+                "(16121, '12A', 15, '2016 - 2017'),\n" +
+                "(16122, '12B', 17, '2016 - 2017');");
         String create_table_loaidiem = String.format("CREATE TABLE IF NOT EXISTS `loaidiem` (\n" +
                 "  `MaLoaiDiem` bigint(20) NOT NULL,\n" +
                 "  `TenLoaiDiem` varchar(100) NOT NULL,\n" +
@@ -1121,6 +1122,7 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
 //                "  ADD CONSTRAINT `chitietketqua_ibfk_3` FOREIGN KEY (`MaMonHoc`) REFERENCES `monhoc` (`MaMonHoc`);");
 //        String alter_ketquahoctap = String.format("ALTER TABLE `ketquahoctap`\n" +
 //                "  ADD CONSTRAINT `ketquahoctap_ibfk_1` FOREIGN KEY (`MSHS`) REFERENCES `hocsinh` (`MSHS`);");
+
         db.execSQL(create_table_lop);
         db.execSQL(create_table_hocsinh);
 
@@ -1137,6 +1139,7 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
        // db.execSQL(alter_chitietketqua);
         //db.execSQL(alter_hocsinh);
        // db.execSQL(alter_ketquahoctap);
+        //db.close();
     }
 
     @Override
@@ -1277,6 +1280,62 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
         }
         return hocSinhs;
     }
+    public int getSiSoHienTai(String tenlop){
+        ArrayList<HocSinh> hocSinhs=new ArrayList<>();
+        int countHs;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor=db.rawQuery("SELECT * FROM HocSinh hs WHERE hs.MaLop IN "+"(SELECT l.MaLop FROM Lop l WHERE l.TenLop='"+tenlop+"')",null);
+        countHs=cursor.getCount();
+        cursor.close();
+        return countHs;
+    }
+    public ArrayList<FaceThem> retrieveLop (){
+        ArrayList<FaceThem> lops=new ArrayList<>();
+        try{
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor cursor=db.rawQuery("SELECT * FROM lop",null);
+
+            FaceThem lop;
+            lops.clear();
+            while (cursor.moveToNext()){
+                String s_malop=cursor.getString(0);
+                String s_tenlop=cursor.getString(1);
+                String s_siso=cursor.getString(2);
+                String s_namhoc=cursor.getString(3);
+
+                lop=new FaceThem();
+                lop.setMaLop(s_malop);
+                lop.setTenLop(s_tenlop);
+                lop.setSiSo(s_siso);
+                lop.setNamHoc(s_namhoc);
+
+                lops.add(lop);
+            }
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        return lops;
+    }
+    public int getSiSoNam(String tenlop){
+        ArrayList<HocSinh> hocSinhs=new ArrayList<>();
+        int countNam;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor=db.rawQuery("SELECT * FROM HocSinh hs WHERE hs.GioiTinh='Nam' AND hs.MaLop IN "+"(SELECT l.MaLop FROM Lop l WHERE l.TenLop='"+tenlop+"')",null);
+        countNam=cursor.getCount();
+        cursor.close();
+        return countNam;
+    }
+    public int getSiSoNu(String tenlop){
+        ArrayList<HocSinh> hocSinhs=new ArrayList<>();
+        int countNu;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor=db.rawQuery("SELECT * FROM HocSinh hs WHERE hs.GioiTinh='Nữ' AND hs.MaLop IN "+"(SELECT l.MaLop FROM Lop l WHERE l.TenLop='"+tenlop+"')",null);
+        countNu=cursor.getCount();
+        cursor.close();
+        return countNu;
+    }
+
 
 }
 

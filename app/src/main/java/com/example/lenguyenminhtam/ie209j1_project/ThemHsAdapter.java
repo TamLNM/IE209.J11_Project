@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -25,7 +26,7 @@ import java.util.List;
 
 public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder> {
     Context context;
-    List<FaceThem> mListFace;
+    ArrayAdapter<FaceThem> mListFace;
 
     Dialog myClassInfoDialog;
 
@@ -34,7 +35,7 @@ public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder
 
     }
 
-    public ThemHsAdapter(List<FaceThem> listFace, Context context) {
+    public ThemHsAdapter(ArrayAdapter<FaceThem> listFace, Context context) {
         this.mListFace = listFace;
         this.context = context;
     }
@@ -43,6 +44,7 @@ public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View itemView;
+
         myClassInfoDialog=new Dialog(context);
         myClassInfoDialog.setContentView(R.layout.fragment_xacnhanlop);
         itemView=LayoutInflater.from(context).inflate(R.layout.item_chonlop, viewGroup, false);
@@ -52,15 +54,18 @@ public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder
   @Override
      public void onClick(View view) {
 //         LinearLayout item_chonlop = myClassInfoDialog.findViewById(R.id.item_chonlop);
+      DatabaseHocSinhHelper db=new DatabaseHocSinhHelper(context);
          TextView tv_tenlop_detailscreen    = myClassInfoDialog.findViewById(R.id.tv_tenlop_detailscreen);
            TextView tv_siso_detailscreen      = myClassInfoDialog.findViewById(R.id.tv_siso_detailscreen);
           TextView tv_sisonam_detailscreen   = myClassInfoDialog.findViewById(R.id.tv_sisonam_detailscreen);
        TextView tv_sisonu_detailscreen   = myClassInfoDialog.findViewById(R.id.tv_sisonu_detailscreen);
 
-           tv_tenlop_detailscreen.setText(mListFace.get(viewHolder.getAdapterPosition()).getTenLop());
-           tv_siso_detailscreen.setText("Sỉ số: "+String.valueOf(mListFace.get(viewHolder.getAdapterPosition()).getSiSo()));
-            tv_sisonam_detailscreen.setText("Nam: "+String.valueOf(mListFace.get(viewHolder.getAdapterPosition()).getSiSoNam()));
-           tv_sisonu_detailscreen.setText("Nữ: "+String.valueOf(mListFace.get(viewHolder.getAdapterPosition()).getSiSoNu()));
+           tv_tenlop_detailscreen.setText(mListFace.getItem(viewHolder.getAdapterPosition()).getTenLop());
+           tv_siso_detailscreen.setText("Sỉ số: "+String.valueOf(mListFace.getItem(viewHolder.getAdapterPosition()).getSiSo()));
+int sisonam=db.getSiSoNam(viewHolder.tv_tenlop.getText().toString());
+      int sisonu=db.getSiSoNu(viewHolder.tv_tenlop.getText().toString());
+            tv_sisonam_detailscreen.setText("Nam: "+String.valueOf(sisonam));
+           tv_sisonu_detailscreen.setText("Nữ: "+String.valueOf(sisonu));
             myClassInfoDialog.show();
        }
    });
@@ -78,33 +83,34 @@ public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder
     public void onBindViewHolder(@NonNull final ThemHsAdapter.ViewHolder viewHolder, int i) {
         // Face face = mListFace.get(i);
 
+        DatabaseHocSinhHelper db=new DatabaseHocSinhHelper(context);
 
 
 
-
-        viewHolder.tv_tenlop.setText(mListFace.get(i).getTenLop());
-        viewHolder.tv_siso.setText(String.valueOf(mListFace.get(i).getSiSo()));
-        viewHolder.tv_sisohientai.setText(String.valueOf(mListFace.get(i).getSiSoHienTai()));
+        viewHolder.tv_tenlop.setText(mListFace.getItem(i).getTenLop());
+        viewHolder.tv_siso.setText(mListFace.getItem(i).getSiSo());
+        int sisohientai=db.getSiSoHienTai(viewHolder.tv_tenlop.getText().toString());
+        viewHolder.tv_sisohientai.setText(String.valueOf(sisohientai));
 
         Drawable img;
         if(viewHolder.tv_siso.getText().toString().equals(viewHolder.tv_sisohientai.getText().toString())){
-       viewHolder.tv_trangthai.setText(context.getResources().getString(R.string.sansang));
+       viewHolder.tv_trangthai.setText(context.getResources().getString(R.string.daday));
             //img = context.getResources().getDrawable( R.drawable.ic_checked);
 //viewHolder.tv_trangthai.setText("Sẵn sàng");
             //viewHolder.tv_trangthai.setCompoundDrawables( img, null, null, null );
-viewHolder.img_trangthai.setImageResource(R.drawable.ic_checked);
-           viewHolder.tv_trangthai.setTextColor(Color.parseColor("#56bf1e"));
+            viewHolder.img_trangthai.setImageResource(R.drawable.ic_multiply);
+           viewHolder.tv_trangthai.setTextColor(Color.parseColor("#f21d1d"));
         }
         else{
-            viewHolder.img_trangthai.setImageResource(R.drawable.ic_multiply);
+            viewHolder.img_trangthai.setImageResource(R.drawable.ic_checked);
 //viewHolder.tv_trangthai.setText("Đã đầy");
 
-        viewHolder.tv_trangthai.setText(context.getResources().getString(R.string.daday));
+        viewHolder.tv_trangthai.setText(context.getResources().getString(R.string.sansang));
             //img = context.getResources().getDrawable( R.drawable.ic_multiply);
 
             //viewHolder.tv_trangthai.setCompoundDrawables( img, null, null, null );
 
-           viewHolder.tv_trangthai.setTextColor(Color.parseColor("#f21d1d"));
+           viewHolder.tv_trangthai.setTextColor(Color.parseColor("#56bf1e"));
         }
 
 
@@ -113,7 +119,7 @@ viewHolder.img_trangthai.setImageResource(R.drawable.ic_checked);
 
     @Override
     public int getItemCount() {
-        return mListFace.size();
+        return mListFace.getCount();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder

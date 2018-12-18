@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
@@ -19,20 +20,20 @@ public class Fragment_ChonLop extends Fragment {
     private View mRootView;
 
 private ThemHsAdapter mAdapter;
-    public List<FaceThem> mListFace;
+    public ArrayAdapter<FaceThem> mListFace;
     public RecyclerView mRrvFace;
 
     public View onCreateView (@NonNull LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState)  {
-
+        DatabaseHocSinhHelper db=new DatabaseHocSinhHelper(getActivity());
         mRootView = inflater.inflate(R.layout.fragment_chonlop, container, false);
 
         mRrvFace=mRootView.findViewById(R.id.rv_ChonLop);
         mRrvFace.setHasFixedSize(true);
         mRrvFace.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        mListFace=new ArrayList<>();
-        mListFace.add(new FaceThem("10A1", 100, 20, 75,95 ));
-        mListFace.add(new FaceThem("10A2", 100, 80, 20,100));
+        mListFace=new ArrayAdapter<FaceThem>(getActivity(),R.layout.item_chonlop,db.retrieveLop());
+        //mListFace.add(new FaceThem("10A1", 100, 20, 75,95 ));
+        //mListFace.add(new FaceThem("10A2", 100, 80, 20,100));
 
         mAdapter = new ThemHsAdapter(mListFace, getContext());
          mRrvFace.setAdapter(mAdapter);
