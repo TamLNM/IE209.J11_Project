@@ -1256,7 +1256,7 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
 
             HocSinh hocSinh;
             hocSinhs.clear();
-            while (cursor.moveToNext()){
+            while (cursor.moveToNext()&& cursor!=null){
                 String s_mshs=cursor.getString(0);
                 String s_hotenhs=cursor.getString(1);
                 String s_gioitinh=cursor.getString(2);
@@ -1274,6 +1274,11 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
                 hocSinh.setLop(s_malop);
                 hocSinhs.add(hocSinh);
             }
+            if (cursor==null){
+                cursor.moveToFirst();
+            }
+
+
         }
         catch (SQLException e){
             e.printStackTrace();
@@ -1293,11 +1298,12 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
         ArrayList<FaceThem> lops=new ArrayList<>();
         try{
             SQLiteDatabase db = this.getWritableDatabase();
-            Cursor cursor=db.rawQuery("SELECT * FROM lop",null);
+            Cursor cursor=db.rawQuery("SELECT * FROM lop ",null);
 
             FaceThem lop;
             lops.clear();
-            while (cursor.moveToNext()){
+            cursor.moveToFirst();
+            while (cursor.moveToNext() && cursor!=null){
                 String s_malop=cursor.getString(0);
                 String s_tenlop=cursor.getString(1);
                 String s_siso=cursor.getString(2);
@@ -1310,6 +1316,7 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
                 lop.setNamHoc(s_namhoc);
 
                 lops.add(lop);
+
             }
         }
         catch (SQLException e){
@@ -1317,6 +1324,7 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
         }
         return lops;
     }
+
     public int getSiSoNam(String tenlop){
         ArrayList<HocSinh> hocSinhs=new ArrayList<>();
         int countNam;

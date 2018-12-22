@@ -71,23 +71,25 @@
             android:layout_marginRight="5dp">
 
             <Button
-                android:id="@+id/btn_danhsachlop"
+                android:id="@+id/btn_xemdanhsachlop"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:background="#003e52"
                 android:textColor="@color/colorWhite"
-                android:text="@string/danh_sach_lop"/>
+                android:text="@string/danh_sach_lop"
+                style="?android:attr/borderlessButtonStyle"/>
 
             <Button
-                android:id="@+id/btn_bangdiemlop"
+                android:id="@+id/btn_xembangdiemlop"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:textAlignment="center"
                 android:background="#003e52"
                 android:textColor="@color/colorWhite"
-                android:text="BẢNG ĐIỂM LỚP"/>
+                android:text="BẢNG ĐIỂM LỚP"
+                style="?android:attr/borderlessButtonStyle"/>
 
         </LinearLayout>
 

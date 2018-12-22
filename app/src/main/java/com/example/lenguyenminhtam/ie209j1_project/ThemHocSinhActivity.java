@@ -118,6 +118,7 @@ public class ThemHocSinhActivity extends AppCompatActivity {
     public void navigateToChonLop(){
         Intent intent = new Intent(ThemHocSinhActivity.this, MH_ChonLop.class);
         ThemHocSinhActivity.this.startActivity(intent);
+
     }
 
 }

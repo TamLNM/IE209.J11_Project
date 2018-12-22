@@ -122,7 +122,7 @@ if (myViewHolder.tv_gioitinh.getText().toString().equals("Nam")){
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            item_dshs=(RelativeLayout)itemView.findViewById(R.id.item_dshs);
+            item_dshs=(RelativeLayout)itemView.findViewById(R.id.item_danhsachhs);
             tv_mshs=(TextView)itemView.findViewById(R.id.txt_mshs);
             tv_hoten=(TextView)itemView.findViewById(R.id.txt_tenhs);
             tv_diachi=(TextView)itemView.findViewById(R.id.txt_diachi);

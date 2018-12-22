@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,22 +18,22 @@ public class Fragment_Lop extends Fragment{
     private View mRootView;
 
     public FaceAdapter  mAdapter;
-    public List<Face>   mListFace;
+    public ArrayAdapter<FaceThem>   mListFace;
     public RecyclerView mRrvFace;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_lop, container, false);
-
+        DatabaseHocSinhHelper db=new DatabaseHocSinhHelper(getActivity());
         // Create recycler view
         mRrvFace = (RecyclerView) mRootView.findViewById(R.id.rv_DanhSachLop);
         mRrvFace.setHasFixedSize(true);
         mRrvFace.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         // Add data to recyclerView
-        mListFace = new ArrayList<>();
-        mListFace.add(new Face("10A1", 100, 80,20));
-        mListFace.add(new Face("10A2", 80, 40,40));
+        mListFace = new ArrayAdapter<>(getActivity(),R.layout.fragment_lop,db.retrieveLop());
+        //mListFace.add(new Face("10A1", 100, 80,20));
+       // mListFace.add(new Face("10A2", 80, 40,40));
 
         // Create adapter
         mAdapter = new FaceAdapter(mListFace, getContext());

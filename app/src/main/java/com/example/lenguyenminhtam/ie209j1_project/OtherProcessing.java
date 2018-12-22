@@ -14,13 +14,13 @@ public class OtherProcessing extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_class_detail);
 
-        btn_BangDiemLop = findViewById(R.id.btn_bangdiemlop);
-        btn_BangDiemLop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Do nothing
-            }
-        });
+        //btn_BangDiemLop = findViewById(R.id.btn_xembangdiemlop);
+//        btn_BangDiemLop.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // Do nothing
+//            }
+//        });
     }
 
 }

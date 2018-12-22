@@ -1,16 +1,22 @@
 package com.example.lenguyenminhtam.ie209j1_project;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.ClipData;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v4.app.Fragment;
 
 import org.w3c.dom.Text;
 
@@ -18,21 +24,23 @@ import java.util.List;
 
 public class FaceAdapter extends RecyclerView.Adapter<FaceAdapter.ViewHolder>
 {
-    private List<Face> mListFace;
+    private ArrayAdapter<FaceThem> mListFace;
     private Context    context;
 
     Dialog myClassInfoDialog;
-
+Activity activity;
     // Constructer
     public FaceAdapter() {
 
     }
 
-    public FaceAdapter(List<Face> listFace, Context context) {
+    public FaceAdapter(ArrayAdapter<FaceThem> listFace, Context context) {
         this.mListFace = listFace;
         this.context = context;
     }
-
+    public void onAttach(Activity activity){
+        this.activity = activity;
+    }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -42,24 +50,28 @@ public class FaceAdapter extends RecyclerView.Adapter<FaceAdapter.ViewHolder>
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int i) {
-        Face face = mListFace.get(i);
-        viewHolder.tvTenLop.setText(face.getTenLop());
-        viewHolder.tvSiSo.setText("" + face.getSiSo());
-        viewHolder.tvSiSoNam.setText("" + face.getSiSoNam());
-        viewHolder.tvSiSoNu.setText("" + face.getSiSoNu());
+        //FaceThem face = mListFace.getItem(i);
+        DatabaseHocSinhHelper db=new DatabaseHocSinhHelper(context);
+
+        viewHolder.tvTenLop.setText(mListFace.getItem(viewHolder.getAdapterPosition()).getTenLop());
+        int sisonam=db.getSiSoNam(viewHolder.tvTenLop.getText().toString());
+        int sisonu=db.getSiSoNu(viewHolder.tvTenLop.getText().toString());
+        viewHolder.tvSiSo.setText("" + mListFace.getItem(viewHolder.getAdapterPosition()).getSiSo());
+        viewHolder.tvSiSoNam.setText("" + String.valueOf(sisonam));
+        viewHolder.tvSiSoNu.setText("" + String.valueOf(sisonu));
 
         // Init child dialog (detail class info)
         myClassInfoDialog = new Dialog(context);
         myClassInfoDialog.setContentView(R.layout.item_class_detail);
 
-        TextView tv_tenlop_detailscreen  = myClassInfoDialog.findViewById(R.id.tv_tenlop_detailscreen);
+        final TextView tv_tenlop_detailscreen  = myClassInfoDialog.findViewById(R.id.tv_tenlop_detailscreen);
         TextView tv_siso_detailscreen    = myClassInfoDialog.findViewById(R.id.tv_siso_detailscreen);
         TextView tv_sisonam_detailscreen = myClassInfoDialog.findViewById(R.id.tv_sisonam_detailscreen);
         TextView tv_sisonu_detailscreen  = myClassInfoDialog.findViewById(R.id.tv_sisonu_detailscreen);
-        tv_tenlop_detailscreen.setText(face.getTenLop());
-        tv_siso_detailscreen.setText("Sỉ số: "+ face.getSiSo());
-        tv_sisonam_detailscreen.setText("Nam: "+ face.getSiSoNam());
-        tv_sisonu_detailscreen.setText("Nữ: "+ face.getSiSoNu());
+        tv_tenlop_detailscreen.setText(mListFace.getItem(viewHolder.getAdapterPosition()).getTenLop());
+        tv_siso_detailscreen.setText("Sỉ số: "+ mListFace.getItem(viewHolder.getAdapterPosition()).getSiSo());
+        tv_sisonam_detailscreen.setText("Nam: "+ String.valueOf(sisonam));
+        tv_sisonu_detailscreen.setText("Nữ: "+ String.valueOf(sisonu));
 
         // Set event reclycler view onClick()
         viewHolder.setItemClickListener(new ItemClickListener() {
@@ -67,15 +79,32 @@ public class FaceAdapter extends RecyclerView.Adapter<FaceAdapter.ViewHolder>
             public void onClick(View view, int position, boolean isLongClick) {
                 myClassInfoDialog.show();
 
-                Button btnOK = myClassInfoDialog.findViewById(R.id.btn_xembangdiem);
+                Button btn_xemdanhsachlop = myClassInfoDialog.findViewById(R.id.btn_xemdanhsachlop);
+                Button btn_xembangdiemlop = myClassInfoDialog.findViewById(R.id.btn_xembangdiemlop);
+                btn_xemdanhsachlop.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(context, XemDanhSachLopActivity.class);
+                        //Bundle bundle = intent.getExtras();
+                        //bundle.putString("tenlop",key_lop);
+                        context.startActivity(intent);
+                    }
+                });
+                 btn_xembangdiemlop.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                    myClassInfoDialog.dismiss();
+                    }
+                });
 
             }
         });
     }
 
+
     @Override
     public int getItemCount() {
-        return mListFace.size();
+        return mListFace.getCount();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder
@@ -113,5 +142,6 @@ public class FaceAdapter extends RecyclerView.Adapter<FaceAdapter.ViewHolder>
             return true;
         }
     }
+
 
 }
