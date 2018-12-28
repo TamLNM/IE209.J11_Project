@@ -38,7 +38,7 @@ public class ThemHocSinhActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_themhocsinh);
 
-
+        Bundle bundle = getIntent().getExtras();
         ////DO add somthing.....
 
         txt_nhaphoten = findViewById(R.id.txt_nhaphoten);
@@ -73,7 +73,9 @@ public class ThemHocSinhActivity extends AppCompatActivity {
                 dpd_ngaysinh.show();
             }
         });
+        if (bundle !=null){
 
+        }
         ////BottomNav
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);

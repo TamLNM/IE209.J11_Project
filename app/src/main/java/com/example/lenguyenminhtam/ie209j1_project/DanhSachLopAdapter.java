@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,18 +21,15 @@ import org.w3c.dom.Text;
 import java.util.List;
 
 public class DanhSachLopAdapter extends RecyclerView.Adapter<DanhSachLopAdapter.MyViewHolder>{
-    Context mContext;
-    ArrayAdapter<HocSinh> mData;
+    private Context mContext;
+    private ArrayAdapter<HocSinh> mData;
     Dialog myDialog;
-    Cursor hscursor;
+
     public DanhSachLopAdapter(Context mContext, ArrayAdapter<HocSinh> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
-    public DanhSachLopAdapter(Context mContext, Cursor mCursor){
-        this.mContext=mContext;
-        this.hscursor=mCursor;
-    }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -39,20 +37,13 @@ public class DanhSachLopAdapter extends RecyclerView.Adapter<DanhSachLopAdapter.
         //myDialog=new Dialog(mContext);
         //myDialog.setContentView(R.layout.fragment_data_student);
         //myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.R.color.transparent));
-
         view=LayoutInflater.from(mContext).inflate(R.layout.item_danhsachlop,viewGroup,false);
         final MyViewHolder viewHolder = new MyViewHolder(view);
-
-
-
-
-
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-
 
         myViewHolder.tv_mshs.setText(mData.getItem(i).getMshs());
         myViewHolder.tv_hoten.setText(mData.getItem(i).getHoten());
@@ -74,7 +65,10 @@ public class DanhSachLopAdapter extends RecyclerView.Adapter<DanhSachLopAdapter.
 
     @Override
     public int getItemCount() {
+        //Log.d("tag", "Trying to get count on line 50 class Test");
+
         return mData.getCount();
+
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
@@ -83,8 +77,6 @@ public class DanhSachLopAdapter extends RecyclerView.Adapter<DanhSachLopAdapter.
         private TextView tv_gioitinh;
         private TextView tv_diachi;
         private TextView tv_ngaysinh;
-
-
         private ImageView iv_avatar;
         private ImageView iv_gioitinh;
 

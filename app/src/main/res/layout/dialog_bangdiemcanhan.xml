@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/dialog_bangdiemcanhan"
+    >
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#003e52"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/img_hs_dialog_bangdiemcanhan"
+            android:layout_width="143dp"
+            android:layout_height="146dp"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="20dp"
+            android:src="@drawable/if_male3_403019" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_tenhs1_dialog_bangdiemcanhan"
+            android:layout_gravity="center_horizontal"
+            android:text="họ tên"
+            android:textColor="#ffffff"
+            android:padding="10dp"
+            />
+
+
+        <TextView
+            android:id="@+id/txt_namhoc_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Năm học 2016-2017"
+            android:textAlignment="textStart"
+            />
+        <TextView
+            android:id="@+id/txt_hocky_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Học kỳ 1"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_monhoc1_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Toán"
+            android:textStyle="bold"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem1_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Miệng: 7"
+            android:textAlignment="textStart" />
+
+        <TextView
+            android:id="@+id/txt_loaidiem2_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="15 phút: 8"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem3_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="1 tiết: 7"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem4_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Học kỳ: 8"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_monhoc2_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Lý"
+            android:textStyle="bold"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem5_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Miệng: 6"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem6_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Miệng: 9"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem7_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="15 phút: 6"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem8_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="1 tiết: 5"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem9_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Học kỳ: 7"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_monhoc3_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Hóa"
+            android:textStyle="bold"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem10_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Miệng: 8"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem11_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Miệng: 9"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem12_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="15 phút: 5"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem13_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="1 tiết: 6"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem14_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Học kỳ: 7"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_monhoc4_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Ngữ văn"
+            android:textStyle="bold"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem15_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Miệng: 8"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem16_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Miệng: 7"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem17_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="15 phút: 8"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem18_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="1 tiết: 7"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem19_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Học kỳ: 8"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_monhoc5_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Tiếng anh"
+            android:textStyle="bold"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem20_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Miệng: 6"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem21_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Miệng: 9"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem22_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="15 phút: 6"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem23_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="1 tiết: 5"
+            android:textAlignment="textStart" />
+        <TextView
+            android:id="@+id/txt_loaidiem24_dialog_bangdiemcanhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+
+            android:drawablePadding="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:text="Học kỳ: 7"
+            android:textAlignment="textStart" />
+    </LinearLayout>
+</ScrollView>
+</RelativeLayout>

@@ -22,24 +22,19 @@ import java.util.List;
 public class Fragment_DanhSachLop extends Fragment {
 
     private View mRootView;
-    Intent intent;
-    private DanhSachLopAdapter mAdapter;
+
+
     public ArrayAdapter<HocSinh> mListFace;
     public RecyclerView mRrvFace;
+    public DanhSachLopAdapter mAdapter;
+//    public void onCreate (@NonNull LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState)  {
+//        super.onCreate(savedInstanceState);
+//        DatabaseHocSinhHelper db=new DatabaseHocSinhHelper(getActivity());
 
-    public View onCreateView (@NonNull LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState)  {
-        DatabaseHocSinhHelper db=new DatabaseHocSinhHelper(getActivity());
-        mRootView = inflater.inflate(R.layout.fragment_danhsachlop, container, false);
+        //String tenlop=intent.getExtras().getString("tenlop");
 
-        mRrvFace=mRootView.findViewById(R.id.rv_DanhSachHocSinhLop);
-        mRrvFace.setHasFixedSize(true);
-        mRrvFace.setLayoutManager(new LinearLayoutManager(getActivity()));
-//        Bundle bundle = this.intent.getExtras();
-
-
-//        String tenlop=bundle.getString("tenlop");
 //        if (tenlop=="10A")
-            mListFace=new ArrayAdapter<HocSinh>(getActivity(),R.layout.item_danhsachlop,db.retrieveHocSinh("SELECT MaLop FROM lop WHERE TenLop ='10A'"));
+//            mListFace=new ArrayAdapter<HocSinh>(getActivity(),R.layout.item_danhsachlop,db.retrieveHocSinh("SELECT MaLop FROM lop WHERE TenLop ='10A'"));
 //        if (tenlop=="10B")
 //            mListFace=new ArrayAdapter<HocSinh>(getActivity(),R.layout.item_danhsachlop,db.retrieveHocSinh("SELECT MaLop FROM lop WHERE TenLop ='10B'"));
 //        if (tenlop=="11A")
@@ -49,18 +44,36 @@ public class Fragment_DanhSachLop extends Fragment {
 //        if (tenlop=="12A")
 //            mListFace=new ArrayAdapter<HocSinh>(getActivity(),R.layout.item_danhsachlop,db.retrieveHocSinh("SELECT MaLop FROM lop WHERE TenLop ='12A'"));
 //        if (tenlop=="12B")
-//            mListFace=new ArrayAdapter<HocSinh>(getActivity(),R.layout.item_danhsachlop,db.retrieveHocSinh("SELECT MaLop FROM lop WHERE TenLop ='12B'"));
+            //mListFace=new ArrayAdapter<HocSinh>(getActivity(),R.layout.item_danhsachlop,db.retrieveHocSinh("SELECT MaLop FROM lop WHERE TenLop ='12B'"));
 
         //mListFace.add(new FaceThem("10A1", 100, 20, 75,95 ));
         //mListFace.add(new FaceThem("10A2", 100, 80, 20,100));
 
+
+
+
+    //}
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        mRootView = inflater.inflate(R.layout.fragment_danhsachlop, container, false);
+
+        DatabaseHocSinhHelper db=new DatabaseHocSinhHelper(getActivity());
+        Intent intent=new Intent();
+
+        mRrvFace=mRootView.findViewById(R.id.rv_DanhSachHocSinhLop);
+        mRrvFace.setHasFixedSize(true);
+        mRrvFace.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+            String malop = intent.getStringExtra("malop");
+            mListFace = new ArrayAdapter<HocSinh>(getActivity(), R.layout.item_danhsachlop, db.retrieveHocSinh("SELECT MaLop FROM lop WHERE TenLop ='10A'"));
+
         mAdapter = new DanhSachLopAdapter(getContext(),mListFace);
         mRrvFace.setAdapter(mAdapter);
         return mRootView;
+
     }
-
-
-
 //    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 //        mRootView = inflater.inflate(R.layout.fragment_chonlop, container, false);
 //

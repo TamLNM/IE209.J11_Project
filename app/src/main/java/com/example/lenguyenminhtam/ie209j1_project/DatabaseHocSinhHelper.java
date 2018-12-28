@@ -1252,7 +1252,7 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
         ArrayList<HocSinh> hocSinhs=new ArrayList<>();
         try{
             SQLiteDatabase db = this.getWritableDatabase();
-            Cursor cursor=db.rawQuery("SELECT * FROM hocsinh WHERE MaLop IN ("+malop+")",null);
+            Cursor cursor=db.rawQuery("SELECT * FROM hocsinh WHERE MaLop IN ("+malop+");",null);
 
             HocSinh hocSinh;
             hocSinhs.clear();
@@ -1264,7 +1264,7 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
                 String s_diachi=cursor.getString(4);
                 String s_email=cursor.getString(5);
                 String s_malop=cursor.getString(6);
-    hocSinh=new HocSinh();
+                hocSinh=new HocSinh();
                 hocSinh.setMshs(s_mshs);
                 hocSinh.setHoten(s_hotenhs);
                 hocSinh.setGioitinh(s_gioitinh);
@@ -1302,7 +1302,7 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
 
             FaceThem lop;
             lops.clear();
-            cursor.moveToFirst();
+            //cursor.moveToFirst();
             while (cursor.moveToNext() && cursor!=null){
                 String s_malop=cursor.getString(0);
                 String s_tenlop=cursor.getString(1);
@@ -1342,6 +1342,41 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
         countNu=cursor.getCount();
         cursor.close();
         return countNu;
+    }
+    public ArrayList<ketquahoctap> retrieveKetquahoctap(String malop){
+        ArrayList<ketquahoctap> kqhts=new ArrayList<>();
+        try{
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor cursor=db.rawQuery("SELECT * FROM ketquahoctap WHERE MSHS ='"+malop+"'",null);
+
+            ketquahoctap kqht;
+            kqhts.clear();
+            while (cursor.moveToNext()&& cursor!=null){
+                String s_makqht=cursor.getString(0);
+                String s_mshs=cursor.getString(1);
+                String s_hocky=cursor.getString(2);
+                String s_namhoc=cursor.getString(3);
+                String s_tbcacmon=cursor.getString(4);
+
+                kqht=new ketquahoctap();
+                kqht.setMaKQHT(s_makqht);
+                kqht.setMSHS(s_mshs);
+                kqht.setHocKy(s_hocky);
+                kqht.setNamHoc(s_namhoc);
+                kqht.setTBCacMon(s_tbcacmon);
+
+                kqhts.add(kqht);
+            }
+            if (cursor==null){
+                cursor.moveToFirst();
+            }
+
+
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        return kqhts;
     }
 
 

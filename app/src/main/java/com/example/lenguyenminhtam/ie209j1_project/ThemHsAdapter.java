@@ -82,11 +82,6 @@ public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder
         return viewHolder;
     }
 
-
-
-
-
-
     @Override
     public void onBindViewHolder(@NonNull final ThemHsAdapter.ViewHolder viewHolder, int i) {
         // Face face = mListFace.get(i);

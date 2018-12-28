@@ -23,7 +23,7 @@ public class HocSinhAdapter extends RecyclerView.Adapter<HocSinhAdapter.MyViewHo
     Context mContext;
     ArrayAdapter<HocSinh> mData;
     Dialog myDialog;
-Cursor hscursor;
+    Cursor hscursor;
     public HocSinhAdapter(Context mContext, ArrayAdapter<HocSinh> mData) {
         this.mContext = mContext;
         this.mData = mData;
@@ -43,17 +43,14 @@ public HocSinhAdapter(Context mContext, Cursor mCursor){
         view=LayoutInflater.from(mContext).inflate(R.layout.item_dshs,viewGroup,false);
         final MyViewHolder viewHolder = new MyViewHolder(view);
 
-
-
-
         viewHolder.item_dshs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ImageView img_hs1=(ImageView)myDialog.findViewById(R.id.img_hs1);
-                TextView txt_hoten1=(TextView)myDialog.findViewById(R.id.txt_tenhs1);
+                final ImageView img_hs1=(ImageView)myDialog.findViewById(R.id.img_hs1);
+                final TextView txt_hoten1=(TextView)myDialog.findViewById(R.id.txt_tenhs1);
                 TextView txt_lop=(TextView) myDialog.findViewById(R.id.txt_lop);
                 TextView txt_ngaysinh=(TextView) myDialog.findViewById(R.id.txt_ngaysinh);
-                TextView txt_gioitinh=(TextView) myDialog.findViewById(R.id.txt_gioitinh);
+                final TextView txt_gioitinh=(TextView) myDialog.findViewById(R.id.txt_gioitinh);
                 TextView txt_diachi=(TextView) myDialog.findViewById(R.id.txt_diachi);
                 TextView txt_email=(TextView) myDialog.findViewById(R.id.txt_email);
                 Button btn_xembangdiem=(Button)myDialog.findViewById(R.id.btn_xembangdiem);
@@ -74,6 +71,38 @@ public HocSinhAdapter(Context mContext, Cursor mCursor){
                    img_hs1.setImageResource(R.drawable.if_female1_403023);
                 }
                 myDialog.show();
+                btn_xembangdiem.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String mshs=mData.getItem(viewHolder.getAdapterPosition()).getMshs();
+                        DatabaseHocSinhHelper db= new DatabaseHocSinhHelper(mContext);
+                        Dialog bangdiemDialog=new Dialog(mContext);
+                        bangdiemDialog.setContentView(R.layout.dialog_bangdiemcanhan);
+
+                        TextView txt_tenhs=bangdiemDialog.findViewById(R.id.txt_tenhs1_dialog_bangdiemcanhan);
+                        txt_tenhs.setText(txt_hoten1.getText().toString());
+                        ImageView img_hs_bangdiem =bangdiemDialog.findViewById(R.id.img_hs_dialog_bangdiemcanhan);
+                        if (txt_gioitinh.getText().toString().equals("Nam")){
+
+                            img_hs_bangdiem.setImageResource(R.drawable.if_male3_403019);
+                        }
+                        if (txt_gioitinh.getText().toString().equals("Nữ")){
+
+                            img_hs_bangdiem.setImageResource(R.drawable.if_female1_403023);
+                        }
+
+
+                        String makqht;
+//                        TextView txt_hocky=bangdiemDialog.findViewById(R.id.txt_hocky_dialog_bangdiemcanhan);
+//                        TextView txt_namhoc=bangdiemDialog.findViewById(R.id.txt_namhoc_dialog_bangdiemcanhan);
+//                        TextView txt_monhoc=bangdiemDialog.findViewById(R.id.txt_monhoc_dialog_bangdiemcanhan);
+//                        TextView txt_loaidiem=bangdiemDialog.findViewById(R.id.txt_loaidiem_dialog_bangdiemcanhan);
+//                        TextView txt_diemso=bangdiemDialog.findViewById(R.id.txt_diemso_dialog_bangdiemcanhan);
+                        bangdiemDialog.show();
+                        //myDialog.dismiss();
+                    }
+                });
+
             }
         });
         return viewHolder;

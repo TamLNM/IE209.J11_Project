@@ -28,6 +28,8 @@
         <activity android:name=".MH_NhapDiemTheoLop" />
 		<activity android:name=".MH_ChonLop"></activity>
         <activity android:name=".XemDanhSachLopActivity"></activity>
+        <activity android:name=".XemBangDiemLopActivity"/>
+
     </application>
 
 </manifest>

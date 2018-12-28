@@ -22,7 +22,7 @@ import android.widget.TextView;
 
 import java.util.Calendar;
 
-public class XemDanhSachLopActivity extends AppCompatActivity {
+public class XemBangDiemLopActivity extends AppCompatActivity {
 
 
     Context context;
@@ -31,10 +31,10 @@ public class XemDanhSachLopActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mh_danhsachhslop);
+        setContentView(R.layout.mh_danhsachdiem);
         //getIntent();
-        Fragment_DanhSachLop fm_danhsachlop = new Fragment_DanhSachLop();
-        loadFragment(fm_danhsachlop);
+        Fragment_BangDiemLop fm_bangdiemlop = new Fragment_BangDiemLop();
+        loadFragment(fm_bangdiemlop);
 
         ////DO add somthing.....
 
@@ -54,24 +54,24 @@ public class XemDanhSachLopActivity extends AppCompatActivity {
                         break;
 
                     case R.id.nav_themsv:
-                        Intent intent1 = new Intent(XemDanhSachLopActivity.this, MH_DanhSachLop.class);
+                        Intent intent1 = new Intent(XemBangDiemLopActivity.this, MH_DanhSachLop.class);
                         startActivity(intent1);
                         break;
 
 
 
                     case R.id.nav_nhapdiem:
-                        Intent intent2 = new Intent(XemDanhSachLopActivity.this, NhapDiemActivity.class);
+                        Intent intent2 = new Intent(XemBangDiemLopActivity.this, NhapDiemActivity.class);
                         startActivity(intent2);
                         break;
 
                     case R.id.nav_baocao:
-                        Intent intent3 = new Intent(XemDanhSachLopActivity.this, BaoCaoActivity.class);
+                        Intent intent3 = new Intent(XemBangDiemLopActivity.this, BaoCaoActivity.class);
                         startActivity(intent3);
                         break;
 
                     case R.id.nav_setting:
-                        Intent intent4 = new Intent(XemDanhSachLopActivity.this, SettingActivity.class);
+                        Intent intent4 = new Intent(XemBangDiemLopActivity.this, SettingActivity.class);
                         startActivity(intent4);
                         break;
                 }
@@ -80,11 +80,11 @@ public class XemDanhSachLopActivity extends AppCompatActivity {
             }
         });
     }
-    private boolean loadFragment(Fragment_DanhSachLop fragment) {
+    private boolean loadFragment(Fragment_BangDiemLop fragment) {
         if (fragment != null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fm_dshslop, fragment)
+                    .replace(R.id.fm_bangdiemlop, fragment)
                     .commit();
             return true;
         }

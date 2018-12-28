@@ -44,10 +44,6 @@ private ArrayAdapter<HocSinh> lsthocsinh;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-
-
-
         mRootView = inflater.inflate(R.layout.fragment_hocsinh, container, false);
         rv_DanhSachHocSinh = (RecyclerView)mRootView.findViewById(R.id.rv_DanhSachHocSinh);
         HocSinhAdapter recyclerViewAdapter =  new HocSinhAdapter(getContext(),lsthocsinh);

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
+    android:paddingLeft="15dp"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    android:background="@color/background_layout">
+
+    <TextView
+        android:id="@+id/tv_bangdiem_mshs"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+
+        android:width="85dp"
+        android:textStyle="bold"
+        android:text="mshs"
+        />
+
+    <TextView
+        android:id="@+id/tv_bangdiem_hocky"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+
+        android:drawablePadding="5dp"
+        android:text="hocky"
+        android:width="85dp"/>
+
+    <TextView
+        android:id="@+id/tv_bangdiem_namhoc"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="namhoc"
+        android:drawablePadding="5dp"
+
+        android:width="85dp"/>
+
+    <TextView
+        android:id="@+id/tv_bangdiem_tbcacmon"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+android:text="tbcacmon"
+        android:drawablePadding="5dp"
+
+        android:width="85dp"/>
+
+</LinearLayout>

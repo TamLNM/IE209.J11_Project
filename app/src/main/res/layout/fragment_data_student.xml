@@ -111,7 +111,7 @@
             android:textStyle="bold"
             android:padding="10dp"
             android:background="@android:color/white"
-            android:textColor="@android:color/darker_gray"
+
             android:text="XEM BẢNG ĐIỂM"
 
             />
