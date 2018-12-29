@@ -72,6 +72,7 @@ public class Fragment_DanhSachLop extends Fragment {
 
         mAdapter = new DanhSachLopAdapter(getContext(),mListFace);
         mRrvFace.setAdapter(mAdapter);
+
         return mRootView;
 
     }

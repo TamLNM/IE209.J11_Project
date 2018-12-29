@@ -9,8 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -30,20 +32,38 @@ public class MyHS_MHNhapDiemTheoLop_Adapter extends RecyclerView.Adapter<MyHS_MH
     public MyHS_MHNhapDiemTheoLop_Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_hocsinh_mhnhapdiemtheolop, viewGroup, false);//null);
         final ViewHolder viewHolder = new ViewHolder(itemView);
-        viewHolder.item_nhapdiemtheolop.setOnClickListener(new View.OnClickListener() {
+//        viewHolder.item_nhapdiemtheolop.setOnClickListener(new View.OnClickListener() {
+//    @Override
+//    public void onClick(View view) {
+//        DatabaseHocSinhHelper db =new DatabaseHocSinhHelper(context);
+//        Intent intent = new Intent();
+//
+//
+//            String tenlop = intent.getStringExtra("txttenlop");
+//            String hocky = intent.getStringExtra("txthocky");
+//            String namhoc = intent.getStringExtra("txtnamhoc");
+//            String monhoc = intent.getStringExtra("txtmonhoc");
+//            String loaidiem = intent.getStringExtra("txtloaidiem");
+//            String diemso =  viewHolder.tvDiemSo.getText().toString();
+//
+//    }
+//});
+viewHolder.btn_luudiem.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
+        DatabaseHocSinhHelper db =new DatabaseHocSinhHelper(context);
         Intent intent = new Intent();
-        Bundle bundle = intent.getExtras();
-        if (bundle!=null) {
-            String tenlop = bundle.getString("txttenlop");
-            String hocky_namhoc = bundle.getString("txthocky") + " - Năm học: " + bundle.getString("txtnamhoc");
-            String monhoc = "MÔN HỌC: " + bundle.getString("txtmonhoc");
-            String loaidiem = "LOẠI ĐIỂM: " + bundle.getString("txtloaidiem");
-            String diemso =  viewHolder.tvDiemSo.getText().toString();
-            intent.putExtra("txtdiemso",diemso);
-            String DiemSo=bundle.getString("txtdiemso");
-        }
+
+
+        String tenlop = intent.getStringExtra("txttenlop");
+        String hocky = intent.getStringExtra("txthocky");
+        String namhoc = intent.getStringExtra("txtnamhoc");
+        String monhoc = intent.getStringExtra("txtmonhoc");
+        String loaidiem = intent.getStringExtra("txtloaidiem");
+        String hoten= viewHolder.tvHoTenHS.getText().toString();
+        String mshs = viewHolder.tvMSHS.getText().toString();
+        String diemso =  viewHolder.tvDiemSo.getText().toString();
+        //db.insertchitietketqua();
     }
 });
         return viewHolder;
@@ -70,15 +90,19 @@ public class MyHS_MHNhapDiemTheoLop_Adapter extends RecyclerView.Adapter<MyHS_MH
         TextView tvHoTenHS;
         TextView tvSTT;
         EditText tvDiemSo;
-        LinearLayout item_nhapdiemtheolop;
+        Button btn_luudiem;
+        RelativeLayout item_nhapdiemtheolop;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            btn_luudiem=itemView.findViewById(R.id.btn_Luu_MHNhapDiemTheoLop);
+
             tvSTT = itemView.findViewById(R.id.tv_STT);
             tvMSHS = itemView.findViewById(R.id.tv_MSHS);
             tvHoTenHS = itemView.findViewById(R.id.tv_HoTenHS);
             tvDiemSo=itemView.findViewById(R.id.tv_nhapdiemso);
             item_nhapdiemtheolop=itemView.findViewById(R.id.item_hocsinh_mhnhapdiemtheolop);
         }
+
     }
 }

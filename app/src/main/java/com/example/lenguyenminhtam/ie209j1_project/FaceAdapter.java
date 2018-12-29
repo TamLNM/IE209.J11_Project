@@ -152,6 +152,7 @@ Activity activity;
         public void setItemClickListener(ItemClickListener itemClickListener)
         {
             this.itemClickListener = itemClickListener;
+
         }
 
         @Override
