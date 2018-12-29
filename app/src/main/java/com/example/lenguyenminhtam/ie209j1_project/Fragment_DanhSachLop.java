@@ -27,7 +27,8 @@ public class Fragment_DanhSachLop extends Fragment {
     public ArrayAdapter<HocSinh> mListFace;
     public RecyclerView mRrvFace;
     public DanhSachLopAdapter mAdapter;
-//    public void onCreate (@NonNull LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState)  {
+
+  public void onCreate (@NonNull LayoutInflater inflater,@Nullable ViewGroup container,@Nullable Bundle savedInstanceState)  {
 //        super.onCreate(savedInstanceState);
 //        DatabaseHocSinhHelper db=new DatabaseHocSinhHelper(getActivity());
 
@@ -51,8 +52,7 @@ public class Fragment_DanhSachLop extends Fragment {
 
 
 
-
-    //}
+   }
 
     @Nullable
     @Override
@@ -66,8 +66,9 @@ public class Fragment_DanhSachLop extends Fragment {
         mRrvFace.setHasFixedSize(true);
         mRrvFace.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-            String malop = intent.getStringExtra("malop");
-            mListFace = new ArrayAdapter<HocSinh>(getActivity(), R.layout.item_danhsachlop, db.retrieveHocSinh("SELECT MaLop FROM lop WHERE TenLop ='10A'"));
+        //String malop = intent.getExtras().getString("malop");
+        String malop = "16101";
+            mListFace = new ArrayAdapter<HocSinh>(getActivity(), R.layout.item_danhsachlop, db.retrieveHocSinh(malop));
 
         mAdapter = new DanhSachLopAdapter(getContext(),mListFace);
         mRrvFace.setAdapter(mAdapter);

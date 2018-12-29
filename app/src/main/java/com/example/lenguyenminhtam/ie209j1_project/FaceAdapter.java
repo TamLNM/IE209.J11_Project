@@ -71,7 +71,7 @@ Activity activity;
                 tv_sisonu_detailscreen.setText("Nữ: "+ String.valueOf(sisonu));
                 myClassInfoDialog.show();
 
-                final String malop=mListFace.getItem(viewHolder.getAdapterPosition()).getMaLop();
+                final String malop=String.valueOf(mListFace.getItem(viewHolder.getAdapterPosition()).getMaLop());
                 Button btn_xemdanhsachlop = myClassInfoDialog.findViewById(R.id.btn_xemdanhsachlop);
                 Button btn_xembangdiemlop = myClassInfoDialog.findViewById(R.id.btn_xembangdiemlop);
                 btn_xemdanhsachlop.setOnClickListener(new View.OnClickListener() {
@@ -79,13 +79,13 @@ Activity activity;
                     public void onClick(View view) {
                         Intent intent = new Intent(context,XemDanhSachLopActivity.class);
                         //String key_lop=tv_tenlop_detailscreen.getText().toString();
-                        Bundle bundle = intent.getExtras();
+
                        // Fragment f= new Fragment_DanhSachLop();
                         //f.setArguments(bundle);
                         //bundle.putString("tenlop",tv_tenlop_detailscreen.getText().toString());
-                        if (bundle !=null)
-                        {//String malop=mListFace.getItem(viewHolder.getAdapterPosition()).getMaLop();
-                            intent.putExtra("malop", malop);}
+
+                        //String malop=mListFace.getItem(viewHolder.getAdapterPosition()).getMaLop();
+                            intent.putExtra("malop", malop);
 
 
                         context.startActivity(intent);
@@ -95,10 +95,9 @@ Activity activity;
                     @Override
                     public void onClick(View view) {
                         Intent intent = new Intent(context,XemBangDiemLopActivity.class);
-                        Bundle bundle = intent.getExtras();
-                        if (bundle !=null)
-                        {String malop1=mListFace.getItem(viewHolder.getAdapterPosition()).getMaLop();
-                            intent.putExtra("malop1", malop1);}
+
+                        String malop1=mListFace.getItem(viewHolder.getAdapterPosition()).getMaLop();
+                            intent.putExtra("malop1", malop1);
                         context.startActivity(intent);
                         //myClassInfoDialog.dismiss();
                     }

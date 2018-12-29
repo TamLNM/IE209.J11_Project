@@ -3,8 +3,10 @@ package com.example.lenguyenminhtam.ie209j1_project;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -19,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -60,7 +63,8 @@ public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder
             TextView tv_siso_detailscreen      = myClassInfoDialog.findViewById(R.id.tv_siso_detailscreen);
             TextView tv_sisonam_detailscreen   = myClassInfoDialog.findViewById(R.id.tv_sisonam_detailscreen);
             TextView tv_sisonu_detailscreen    = myClassInfoDialog.findViewById(R.id.tv_sisonu_detailscreen);
-            Button btn_dongy=myClassInfoDialog.findViewById(R.id.btn_danhsachlop);
+            Button btn_dongy=myClassInfoDialog.findViewById(R.id.btn_dongy_chonlop);
+            Button btn_huybo = myClassInfoDialog.findViewById(R.id.btn_kdongy_chonlop);
 
             tv_tenlop_detailscreen.setText(mListFace1.getItem(viewHolder.getAdapterPosition()).getTenLop());
             tv_siso_detailscreen.setText("Sỉ số: "+String.valueOf(mListFace1.getItem(viewHolder.getAdapterPosition()).getSiSo()));
@@ -71,9 +75,47 @@ public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder
             btn_dongy.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View view) {
-                myClassInfoDialog.dismiss();
+                   DatabaseHocSinhHelper db=new DatabaseHocSinhHelper(context);
+                   Intent intent=new Intent(context,ThemHocSinhActivity.class);
+
+//                    if(viewHolder.tv_trangthai.getText().toString().equals("Sẵn sàng")) {
+                        String txt_hoten = intent.getStringExtra("txt_themhs_hoten");
+                        String txt_ngaysinh = intent.getStringExtra("txt_themhs_ngaysinh");
+                        String txt_email = intent.getStringExtra("txt_themhs_email");
+                        String txt_diachi = intent.getStringExtra("txt_themhs_diachi");
+                        String txt_gioitinh = intent.getStringExtra("txt_themhs_gioitinh");
+//                        String txt_malop = mListFace1.getItem(viewHolder.getAdapterPosition()).getMaLop();
+
+                        String txt_mshs = "16101" + String.valueOf(db.getSiSoHienTai("10A") + 1);
+                        //db.insertHocSinh(txt_mshs, txt_hoten, txt_gioitinh, txt_ngaysinh, txt_diachi, txt_email, txt_malop);
+                  // db.insertHocSinh("1610116","Lê Minh Vương", "Nam","12/04/1996","Bình Thạnh, Tp. Hồ Chí Minh","leminhvuong@gmail.com","16101");
+                   //db.insertHocSinh(txt_mshs,txt_hoten,txt_gioitinh,txt_ngaysinh,txt_diachi,txt_email,"16101");
+                   db.insertHocSinh("1610117","Nguyễn Thị Huyền Trang", "Nữ", "12/05/1996","Quận 9, Hồ Chí Minh", "nthtrang@gmail.com","16101");
+                   Toast.makeText(context, "Thêm thành công", Toast.LENGTH_SHORT).show();
+                   myClassInfoDialog.dismiss();
+//                    }
+                   //else Toast.makeText(context,"Thêm thất bại", Toast.LENGTH_SHORT).show();
+//                   if (viewHolder.tv_trangthai.equals("Sẵn sàng")){
+//                       String txt_hoten= bundle.getString("txt_themhs_hoten");
+//                       String txt_ngaysinh = bundle.getString("txt_themhs_ngaysinh");
+//                       String txt_email=bundle.getString("txt_themhs_email");
+//                       String txt_diachi = bundle.getString("txt_themhs_diachi");
+//                       String txt_gioitinh=bundle.getString("txt_themhs_gioitinh");
+//                       String txt_mshs="16101"+(db.getSiSoHienTai(mListFace1.getItem(viewHolder.getAdapterPosition()).getTenLop())+1);
+//
+//
+//                   }
+
+                  // myClassInfoDialog.dismiss();
                }
            });
+            btn_huybo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    myClassInfoDialog.dismiss();
+                }
+            });
             myClassInfoDialog.show();
        }
    });
@@ -91,8 +133,9 @@ public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder
         int sisohientai=db.getSiSoHienTai(viewHolder.tv_tenlop.getText().toString());
         viewHolder.tv_sisohientai.setText(String.valueOf(sisohientai));
 
-        Drawable img;
-        if(viewHolder.tv_siso.getText().toString().equals(viewHolder.tv_sisohientai.getText().toString())){
+        int siso = Integer.parseInt(viewHolder.tv_siso.getText().toString());
+
+        if(siso ==sisohientai){
        viewHolder.tv_trangthai.setText(context.getResources().getString(R.string.daday));
             //img = context.getResources().getDrawable( R.drawable.ic_checked);
 //viewHolder.tv_trangthai.setText("Sẵn sàng");
@@ -100,7 +143,7 @@ public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder
             viewHolder.img_trangthai.setImageResource(R.drawable.ic_multiply);
            viewHolder.tv_trangthai.setTextColor(Color.parseColor("#f21d1d"));
         }
-        else{
+        else if (sisohientai<siso){
             viewHolder.img_trangthai.setImageResource(R.drawable.ic_checked);
 //viewHolder.tv_trangthai.setText("Đã đầy");
 
@@ -110,6 +153,11 @@ public class ThemHsAdapter extends RecyclerView.Adapter<ThemHsAdapter.ViewHolder
             //viewHolder.tv_trangthai.setCompoundDrawables( img, null, null, null );
 
            viewHolder.tv_trangthai.setTextColor(Color.parseColor("#56bf1e"));
+        }
+        else if(sisohientai>siso){
+            viewHolder.tv_trangthai.setText("Quá tải");
+            viewHolder.img_trangthai.setImageResource(R.drawable.ic_multiply);
+            viewHolder.tv_trangthai.setTextColor(Color.parseColor("#f21d1d"));
         }
     }
 

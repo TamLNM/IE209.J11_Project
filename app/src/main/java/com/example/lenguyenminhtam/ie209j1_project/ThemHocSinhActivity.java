@@ -16,7 +16,9 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -24,6 +26,7 @@ public class ThemHocSinhActivity extends AppCompatActivity {
     EditText txt_nhaphoten;
     //private ImageView imageView;
     //private ViewPager vp;
+    RadioGroup rdo_gioitinh;
     RadioButton rdo_nam;
     RadioButton rdo_nu;
     EditText txt_nhapngaysinh;
@@ -33,18 +36,20 @@ public class ThemHocSinhActivity extends AppCompatActivity {
     Calendar c;
     DatePickerDialog dpd_ngaysinh;
     Button btn_themhs;
+    //Context context;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_themhocsinh);
 
-        Bundle bundle = getIntent().getExtras();
+
         ////DO add somthing.....
 
         txt_nhaphoten = findViewById(R.id.txt_nhaphoten);
         txt_nhapngaysinh = findViewById(R.id.txt_nhapngaysinh);
-        rdo_nam = findViewById(R.id.rdo_nam);
-        rdo_nu = findViewById(R.id.rdo_nu);
+        rdo_gioitinh=findViewById(R.id.rdo_gioitinh);
+        rdo_nam=findViewById(R.id.rdo_nam);
+        rdo_nu=findViewById(R.id.rdo_nu);
         txt_nhapemail = findViewById(R.id.txt_nhapemail);
         txt_nhapdiachi = findViewById(R.id.txt_nhapdiachi);
 
@@ -53,7 +58,9 @@ public class ThemHocSinhActivity extends AppCompatActivity {
         btn_themhs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (txt_nhaphoten.getText().toString() !="" && txt_nhapdiachi.getText().toString()!="" && txt_nhapemail.getText().toString()!="" && txt_nhapngaysinh.getText().toString()!="")
                 navigateToChonLop();
+               // else Toast.makeText(context,"Bạn phải điền đầy đủ", Toast.LENGTH_LONG);
             }
         });
         txt_nhapngaysinh.setOnClickListener(new View.OnClickListener() {
@@ -70,12 +77,11 @@ public class ThemHocSinhActivity extends AppCompatActivity {
                         txt_nhapngaysinh.setText(mDay + "/" + (mMonth+1) + "/" + mYear );
                     }
                 }, day, month, year);
+                dpd_ngaysinh.getDatePicker().setMinDate(2200);
                 dpd_ngaysinh.show();
             }
         });
-        if (bundle !=null){
 
-        }
         ////BottomNav
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
@@ -118,7 +124,25 @@ public class ThemHocSinhActivity extends AppCompatActivity {
         });
     }
     public void navigateToChonLop(){
+        String txt_gioitinh="";
+        String txt_hoten=txt_nhaphoten.getText().toString();
+        String txt_ngaysinh=txt_nhapngaysinh.getText().toString();
+        String txt_email=txt_nhapemail.getText().toString();
+        String txt_diachi=txt_nhapdiachi.getText().toString();
+
+
+        if (rdo_gioitinh.isSelected()==true){
+            if (rdo_gioitinh.getCheckedRadioButtonId()==R.id.rdo_nam){
+                txt_gioitinh="Nam";
+            }
+            else txt_gioitinh="Nữ";
+        }
         Intent intent = new Intent(ThemHocSinhActivity.this, MH_ChonLop.class);
+        intent.putExtra("txt_themhs_hoten",txt_hoten);
+        intent.putExtra("txt_themhs_ngaysinh",txt_ngaysinh);
+        intent.putExtra("txt_themhs_email",txt_email);
+        intent.putExtra("txt_themhs_diachi",txt_diachi);
+        intent.putExtra("txt_themhs_gioitinh",txt_gioitinh);
         ThemHocSinhActivity.this.startActivity(intent);
 
     }

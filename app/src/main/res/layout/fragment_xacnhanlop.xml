@@ -63,7 +63,7 @@
             android:paddingLeft="130dp"
             android:text="@string/si_so_hsnu"/>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -71,18 +71,27 @@
             android:layout_marginRight="5dp">
 
             <Button
-                android:id="@+id/btn_danhsachlop"
+                android:id="@+id/btn_dongy_chonlop"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:layout_centerInParent="true"
                 android:background="#003e52"
                 android:textColor="@color/colorWhite"
-                android:text="@string/dongy"/>
+                android:text="@string/dongy"
+                style="?android:attr/borderlessButtonStyle"/>
+            <Button
+                android:id="@+id/btn_kdongy_chonlop"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:textAlignment="center"
+                android:background="#003e52"
+                android:textColor="@color/colorWhite"
+                android:text="@string/cancel"
+                style="?android:attr/borderlessButtonStyle"/>
 
 
-
-        </RelativeLayout>
+        </LinearLayout>
 
 
     </LinearLayout>

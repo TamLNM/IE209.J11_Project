@@ -112,6 +112,7 @@
                         android:src="@drawable/ic_gender" />
 
                     <RadioGroup
+                        android:id="@+id/rdo_gioitinh"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

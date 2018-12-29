@@ -20,8 +20,14 @@ public class MH_ChonLop extends AppCompatActivity {
         Fragment_ChonLop fm_chonlop = new Fragment_ChonLop();
         loadFragment(fm_chonlop);
 
-
-
+//        Bundle bundle = getIntent().getExtras();
+//        if (bundle !=null){
+//            String txt_hoten= bundle.getString("txt_themhs_hoten");
+//            String txt_ngaysinh = bundle.getString("txt_themhs_ngaysinh");
+//            String txt_email=bundle.getString("txt_themhs_email");
+//            String txt_diachi = bundle.getString("txt_themhs_diachi");
+//            String txt_gioitinh=bundle.getString("txt_themhs_gioitinh");
+//        }
         // Add bottom navigation bar
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);

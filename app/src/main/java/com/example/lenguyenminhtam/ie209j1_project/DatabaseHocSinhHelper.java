@@ -1285,11 +1285,48 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
         }
         return hocSinhs;
     }
+    public ArrayList<HocSinh> retrieveHocSinh2(int malop){
+        ArrayList<HocSinh> hocSinhs=new ArrayList<>();
+        try{
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor cursor=db.rawQuery("SELECT * FROM hocsinh  WHERE MaLop = '"+malop+"';",null);
+
+            HocSinh hocSinh;
+            hocSinhs.clear();
+            while (cursor.moveToNext()&& cursor!=null){
+                String s_mshs=cursor.getString(0);
+                String s_hotenhs=cursor.getString(1);
+                String s_gioitinh=cursor.getString(2);
+                String s_ngaysinh=cursor.getString(3);
+                String s_diachi=cursor.getString(4);
+                String s_email=cursor.getString(5);
+                String s_malop=cursor.getString(6);
+                hocSinh=new HocSinh();
+                hocSinh.setMshs(s_mshs);
+                hocSinh.setHoten(s_hotenhs);
+                hocSinh.setGioitinh(s_gioitinh);
+                hocSinh.setNgaysinh(s_ngaysinh);
+                hocSinh.setDiachi(s_diachi);
+                hocSinh.setEmail(s_email);
+                hocSinh.setLop(s_malop);
+                hocSinhs.add(hocSinh);
+            }
+            if (cursor==null){
+                cursor.moveToFirst();
+            }
+
+
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        return hocSinhs;
+    }
     public int getSiSoHienTai(String tenlop){
         ArrayList<HocSinh> hocSinhs=new ArrayList<>();
         int countHs;
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor=db.rawQuery("SELECT * FROM HocSinh hs WHERE hs.MaLop IN "+"(SELECT l.MaLop FROM Lop l WHERE l.TenLop='"+tenlop+"')",null);
+        Cursor cursor=db.rawQuery("SELECT * FROM hocsinh hs WHERE hs.MaLop IN "+"(SELECT l.MaLop FROM Lop l WHERE l.TenLop='"+tenlop+"')",null);
         countHs=cursor.getCount();
         cursor.close();
         return countHs;
@@ -1329,7 +1366,7 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
         ArrayList<HocSinh> hocSinhs=new ArrayList<>();
         int countNam;
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor=db.rawQuery("SELECT * FROM HocSinh hs WHERE hs.GioiTinh='Nam' AND hs.MaLop IN "+"(SELECT l.MaLop FROM Lop l WHERE l.TenLop='"+tenlop+"')",null);
+        Cursor cursor=db.rawQuery("SELECT * FROM hocsinh hs WHERE hs.GioiTinh='Nam' AND hs.MaLop IN "+"(SELECT l.MaLop FROM lop l WHERE l.TenLop='"+tenlop+"')",null);
         countNam=cursor.getCount();
         cursor.close();
         return countNam;
@@ -1338,7 +1375,7 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
         ArrayList<HocSinh> hocSinhs=new ArrayList<>();
         int countNu;
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor=db.rawQuery("SELECT * FROM HocSinh hs WHERE hs.GioiTinh='Nữ' AND hs.MaLop IN "+"(SELECT l.MaLop FROM Lop l WHERE l.TenLop='"+tenlop+"')",null);
+        Cursor cursor=db.rawQuery("SELECT * FROM hocsinh hs WHERE hs.GioiTinh='Nữ' AND hs.MaLop IN "+"(SELECT l.MaLop FROM lop l WHERE l.TenLop='"+tenlop+"')",null);
         countNu=cursor.getCount();
         cursor.close();
         return countNu;
