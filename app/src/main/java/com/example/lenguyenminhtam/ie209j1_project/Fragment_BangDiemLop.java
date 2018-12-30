@@ -31,7 +31,7 @@ public class Fragment_BangDiemLop extends Fragment {
 
         String malop = intent.getStringExtra("malop1");
 
-        mListFace = new ArrayAdapter<ketquahoctap>(getActivity(), R.layout.item_danhsachdiem, db.retrieveKetquahoctap("SELECT MSHS FROM hocsinh WHERE MaLop='10A'"));
+        mListFace = new ArrayAdapter<ketquahoctap>(getActivity(), R.layout.item_danhsachdiem, db.retrieveKetquahoctap("(SELECT MSHS FROM hocsinh WHERE MaLop='16101')"));
 
         mAdapter = new BangDiemLopAdapter(getContext(),mListFace);
         mRrvFace.setAdapter(mAdapter);

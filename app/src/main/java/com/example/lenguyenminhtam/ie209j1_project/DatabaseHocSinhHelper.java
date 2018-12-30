@@ -1384,7 +1384,7 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
         ArrayList<ketquahoctap> kqhts=new ArrayList<>();
         try{
             SQLiteDatabase db = this.getWritableDatabase();
-            Cursor cursor=db.rawQuery("SELECT * FROM ketquahoctap WHERE MSHS ='"+malop+"'",null);
+            Cursor cursor=db.rawQuery("SELECT * FROM ketquahoctap WHERE MSHS IN "+malop+"",null);
 
             ketquahoctap kqht;
             kqhts.clear();
