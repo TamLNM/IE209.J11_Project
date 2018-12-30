@@ -11,6 +11,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/rv_DanhSachHocSinhLop"
 
-        ></android.support.v7.widget.RecyclerView>
+        />
 
 </LinearLayout>
