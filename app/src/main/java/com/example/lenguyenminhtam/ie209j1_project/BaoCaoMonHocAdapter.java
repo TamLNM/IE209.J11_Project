@@ -15,7 +15,7 @@ import java.text.BreakIterator;
 import java.util.List;
 import java.util.Random;
 
-public class FaceBaoCaoAdapter extends RecyclerView.Adapter<FaceBaoCaoAdapter.ViewHolder>
+public class BaoCaoMonHocAdapter extends RecyclerView.Adapter<BaoCaoMonHocAdapter.ViewHolder>
 {
     private ArrayAdapter<FaceThem> mListFace;
     private Context    context;
@@ -23,11 +23,11 @@ public class FaceBaoCaoAdapter extends RecyclerView.Adapter<FaceBaoCaoAdapter.Vi
     Dialog myClassInfoDialog;
 
     // Constructer
-    public FaceBaoCaoAdapter() {
+    public BaoCaoMonHocAdapter() {
 
     }
 
-    public FaceBaoCaoAdapter(ArrayAdapter<FaceThem> listFace, Context context) {
+    public BaoCaoMonHocAdapter(ArrayAdapter<FaceThem> listFace, Context context) {
         this.mListFace = listFace;
         this.context = context;
     }
@@ -42,7 +42,6 @@ public class FaceBaoCaoAdapter extends RecyclerView.Adapter<FaceBaoCaoAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int i) {
         //FaceThem face = mListFace.getItem(i);
-
         DatabaseHocSinhHelper db=new DatabaseHocSinhHelper(context);
         Random random = new Random();
         viewHolder.tvTenLop.setText(mListFace.getItem(viewHolder.getAdapterPosition()).getTenLop());
@@ -51,10 +50,10 @@ public class FaceBaoCaoAdapter extends RecyclerView.Adapter<FaceBaoCaoAdapter.Vi
         viewHolder.tvSiSo.setText("" + mListFace.getItem(viewHolder.getAdapterPosition()).getSiSo());
 
 
-        int soluongdat = random.nextInt(12-1)+1;
+        int soluongdat = random.nextInt(15-1)+1;
         viewHolder.tvSoLuongDat.setText("" + String.valueOf(soluongdat));
         float tyledat = ((float)soluongdat / (float)db.getSiSoHienTai(tenlop))*100;
-        viewHolder.tvTyLeDat.setText("" + String.valueOf(tyledat) + "%");
+        viewHolder.tvTyLeDat.setText("" + tyledat + "%");
 
         // Init child dialog (detail class info)
         myClassInfoDialog = new Dialog(context);
@@ -89,7 +88,7 @@ public class FaceBaoCaoAdapter extends RecyclerView.Adapter<FaceBaoCaoAdapter.Vi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder
-                            implements View.OnClickListener, View.OnLongClickListener
+            implements View.OnClickListener, View.OnLongClickListener
     {
 
         TextView tvTenLop, tvSiSo  , tvSoLuongDat, tvTyLeDat;

@@ -11,25 +11,28 @@
 
 
         <TableRow>
-            <EditText
+            <TextView
                 android:id="@+id/edit_TenMonHoc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_alignParentTop="true"
                 android:ems="10"
-                android:hint="Môn học"
-                android:inputType="textPersonName"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="monhoc"
                 />
 
-            <EditText
-                android:id="@+id/edit_TenHocKy"
+            <TextView
+                android:id="@+id/edit_TenHocKy2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:ems="10"
-                android:hint="Học kỳ"
-                android:inputType="textPersonName"
+                android:text="hocky"
+                android:textStyle="bold"
+                android:textSize="20dp"
+
                 />
         </TableRow>
 

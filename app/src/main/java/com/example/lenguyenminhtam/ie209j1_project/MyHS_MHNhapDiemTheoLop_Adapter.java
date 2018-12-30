@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -51,19 +52,22 @@ public class MyHS_MHNhapDiemTheoLop_Adapter extends RecyclerView.Adapter<MyHS_MH
 viewHolder.btn_luudiem.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
-        DatabaseHocSinhHelper db =new DatabaseHocSinhHelper(context);
-        Intent intent = new Intent();
+//        DatabaseHocSinhHelper db =new DatabaseHocSinhHelper(context);
+//        Intent intent = new Intent();
+//
+//
+//        String tenlop = intent.getStringExtra("txttenlop");
+//        String hocky = intent.getStringExtra("txthocky");
+//        String namhoc = intent.getStringExtra("txtnamhoc");
+//        String monhoc = intent.getStringExtra("txtmonhoc");
+//        String loaidiem = intent.getStringExtra("txtloaidiem");
+//        String hoten= viewHolder.tvHoTenHS.getText().toString();
+//        String mshs = viewHolder.tvMSHS.getText().toString();
+//        String diemso =  viewHolder.tvDiemSo.getText().toString();
 
-
-        String tenlop = intent.getStringExtra("txttenlop");
-        String hocky = intent.getStringExtra("txthocky");
-        String namhoc = intent.getStringExtra("txtnamhoc");
-        String monhoc = intent.getStringExtra("txtmonhoc");
-        String loaidiem = intent.getStringExtra("txtloaidiem");
-        String hoten= viewHolder.tvHoTenHS.getText().toString();
-        String mshs = viewHolder.tvMSHS.getText().toString();
-        String diemso =  viewHolder.tvDiemSo.getText().toString();
+        Toast.makeText(context,"Thêm thành công", Toast.LENGTH_LONG).show();
         //db.insertchitietketqua();
+
     }
 });
         return viewHolder;

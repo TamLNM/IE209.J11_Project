@@ -202,42 +202,42 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
 
                 ") ;");
         String insert_ketquahoctap = String.format("INSERT INTO `ketquahoctap` (`MaKQHT`, `MSHS`, `HocKy`, `NamHoc`, `TBCacMon`) VALUES\n" +
-                "(11610101, 1610101, 'HK1', '2016 - 2017', 0),\n" +
-                "(11610102, 1610102, 'HK1', '2016 - 2017', 0),\n" +
-                "(11610103, 1610103, 'HK1', '2016 - 2017', 0),\n" +
-                "(11610201, 1610201, 'HK1', '2016 - 2017', 0),\n" +
-                "(11610202, 1610202, 'HK1', '2016 - 2017', 0),\n" +
-                "(11610203, 1610203, 'HK1', '2016 - 2017', 0),\n" +
-                "(11611101, 1611101, 'HK1', '2016 - 2017', 0),\n" +
-                "(11611102, 1611102, 'HK1', '2016 - 2017', 0),\n" +
-                "(11611103, 1611103, 'HK1', '2016 - 2017', 0),\n" +
-                "(11611201, 1611201, 'HK1', '2016 - 2017', 0),\n" +
-                "(11611202, 1611202, 'HK1', '2016 - 2017', 0),\n" +
-                "(11611203, 1611203, 'HK1', '2016 - 2017', 0),\n" +
-                "(11612101, 1612101, 'HK1', '2016 - 2017', 0),\n" +
-                "(11612102, 1612102, 'HK1', '2016 - 2017', 0),\n" +
-                "(11612103, 1612103, 'HK1', '2016 - 2017', 0),\n" +
-                "(11612201, 1612201, 'HK1', '2016 - 2017', 0),\n" +
-                "(11612202, 1612202, 'HK1', '2016 - 2017', 0),\n" +
-                "(11612203, 1612203, 'HK1', '2016 - 2017', 0),\n" +
-                "(21610101, 1610101, 'HK2', '2016 - 2017', 0),\n" +
-                "(21610102, 1610102, 'HK2', '2016 - 2017', 0),\n" +
-                "(21610103, 1610103, 'HK2', '2016 - 2017', 0),\n" +
-                "(21610201, 1610201, 'HK2', '2016 - 2017', 0),\n" +
-                "(21610202, 1610202, 'HK2', '2016 - 2017', 0),\n" +
-                "(21610203, 1610203, 'HK2', '2016 - 2017', 0),\n" +
-                "(21611101, 1611101, 'HK2', '2016 - 2017', 0),\n" +
-                "(21611102, 1611102, 'HK2', '2016 - 2017', 0),\n" +
-                "(21611103, 1611103, 'HK2', '2016 - 2017', 0),\n" +
-                "(21611201, 1611201, 'HK2', '2016 - 2017', 0),\n" +
-                "(21611202, 1611202, 'HK2', '2016 - 2017', 0),\n" +
-                "(21611203, 1611203, 'HK2', '2016 - 2017', 0),\n" +
-                "(21612101, 1612101, 'HK2', '2016 - 2017', 0),\n" +
-                "(21612102, 1612102, 'HK2', '2016 - 2017', 0),\n" +
-                "(21612103, 1612103, 'HK2', '2016 - 2017', 0),\n" +
-                "(21612201, 1612201, 'HK2', '2016 - 2017', 0),\n" +
-                "(21612202, 1612202, 'HK2', '2016 - 2017', 0),\n" +
-                "(21612203, 1612203, 'HK2', '2016 - 2017', 0);");
+                "(11610101, 1610101, 'HK1', '2016 - 2017', 6.7),\n" +
+                "(11610102, 1610102, 'HK1', '2016 - 2017', 7.1),\n" +
+                "(11610103, 1610103, 'HK1', '2016 - 2017', 7.4),\n" +
+                "(11610201, 1610201, 'HK1', '2016 - 2017', 6.5),\n" +
+                "(11610202, 1610202, 'HK1', '2016 - 2017', 8.0),\n" +
+                "(11610203, 1610203, 'HK1', '2016 - 2017', 7.6),\n" +
+                "(11611101, 1611101, 'HK1', '2016 - 2017', 7.0),\n" +
+                "(11611102, 1611102, 'HK1', '2016 - 2017', 6.9),\n" +
+                "(11611103, 1611103, 'HK1', '2016 - 2017', 5.3),\n" +
+                "(11611201, 1611201, 'HK1', '2016 - 2017', 3.4),\n" +
+                "(11611202, 1611202, 'HK1', '2016 - 2017', 4.9),\n" +
+                "(11611203, 1611203, 'HK1', '2016 - 2017', 7.9),\n" +
+                "(11612101, 1612101, 'HK1', '2016 - 2017', 8.1),\n" +
+                "(11612102, 1612102, 'HK1', '2016 - 2017', 9.0),\n" +
+                "(11612103, 1612103, 'HK1', '2016 - 2017', 5.4),\n" +
+                "(11612201, 1612201, 'HK1', '2016 - 2017', 3.6),\n" +
+                "(11612202, 1612202, 'HK1', '2016 - 2017', 4.8),\n" +
+                "(11612203, 1612203, 'HK1', '2016 - 2017', 5.7),\n" +
+                "(21610101, 1610101, 'HK2', '2016 - 2017', 8.0),\n" +
+                "(21610102, 1610102, 'HK2', '2016 - 2017', 8.5),\n" +
+                "(21610103, 1610103, 'HK2', '2016 - 2017', 4.5),\n" +
+                "(21610201, 1610201, 'HK2', '2016 - 2017', 6.7),\n" +
+                "(21610202, 1610202, 'HK2', '2016 - 2017', 7.8),\n" +
+                "(21610203, 1610203, 'HK2', '2016 - 2017', 8.9),\n" +
+                "(21611101, 1611101, 'HK2', '2016 - 2017', 6.5),\n" +
+                "(21611102, 1611102, 'HK2', '2016 - 2017', 7.3),\n" +
+                "(21611103, 1611103, 'HK2', '2016 - 2017', 7.5),\n" +
+                "(21611201, 1611201, 'HK2', '2016 - 2017', 6.8),\n" +
+                "(21611202, 1611202, 'HK2', '2016 - 2017', 5.6),\n" +
+                "(21611203, 1611203, 'HK2', '2016 - 2017', 5.9),\n" +
+                "(21612101, 1612101, 'HK2', '2016 - 2017', 5.3),\n" +
+                "(21612102, 1612102, 'HK2', '2016 - 2017', 5.9),\n" +
+                "(21612103, 1612103, 'HK2', '2016 - 2017', 5.0),\n" +
+                "(21612201, 1612201, 'HK2', '2016 - 2017', 6.0),\n" +
+                "(21612202, 1612202, 'HK2', '2016 - 2017', 6.8),\n" +
+                "(21612203, 1612203, 'HK2', '2016 - 2017', 7.9);");
         String create_table_chitietketqua = String.format("CREATE TABLE IF NOT EXISTS `chitietketqua` (\n" +
                 "  `MaCTKQ` bigint(20) NOT NULL,\n" +
                 "  `MaKQHT` bigint(20) NOT NULL,\n" +
@@ -1415,7 +1415,51 @@ public class DatabaseHocSinhHelper extends SQLiteOpenHelper {
         }
         return kqhts;
     }
+public int getSoLuongDat(String tenlop){
+
+    int countDat;
+    SQLiteDatabase db = this.getWritableDatabase();
+    Cursor cursor=db.rawQuery("SELECT * FROM ketquahoctap kqht LEFT JOIN hocsinh hs ON kqht.MSHS=hs.MSHS LEFT JOIN lop l ON hs.MaLop=l.MaLop WHERE kqht.TBCacMon>=5.0 AND l.TenLop='"+tenlop+"'",null);
+    countDat=cursor.getCount();
+    cursor.close();
+    return countDat;
+}
+    public int getSoLuongDatTheoMon(String tenlop){
+
+        int countDat;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor=db.rawQuery("SELECT * FROM ketquahoctap kqht LEFT JOIN hocsinh hs, lop l WHERE kqht.TBCacMon>=5.0 AND kqht.MSHS=hs.MSHS AND hs.MaLop=l.MaLop AND l.TenLop='"+tenlop+"'",null);
+        countDat=cursor.getCount();
+        cursor.close();
+        return countDat;
+    }
+    public ArrayList<FaceMonHoc> retrieveMonHoc (){
+        ArrayList<FaceMonHoc> monHocs=new ArrayList<>();
+        try{
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor cursor=db.rawQuery("SELECT * FROM monhoc ",null);
+
+            FaceMonHoc monHoc;
+            monHocs.clear();
+            //cursor.moveToFirst();
+            while (cursor.moveToNext() && cursor!=null){
+                String s_mamh=cursor.getString(0);
+                String s_tenmh=cursor.getString(1);
 
 
+                monHoc=new FaceMonHoc();
+                monHoc.setIdMonHoc(s_mamh);
+                monHoc.setTenMonHoc(s_tenmh);
+
+
+                monHocs.add(monHoc);
+
+            }
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        return monHocs;
+    }
 }
 

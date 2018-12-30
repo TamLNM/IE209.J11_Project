@@ -17,6 +17,8 @@ public class FaceMonHoc {
         this.TenMonHoc = TenMonHoc;
     }
 
+    public FaceMonHoc() {
+    }
 
     public String getTenMonHoc() {
         return TenMonHoc;

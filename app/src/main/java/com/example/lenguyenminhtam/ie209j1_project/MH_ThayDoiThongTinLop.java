@@ -1,6 +1,7 @@
 package com.example.lenguyenminhtam.ie209j1_project;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 public class MH_ThayDoiThongTinLop extends AppCompatActivity {
@@ -27,6 +30,16 @@ public class MH_ThayDoiThongTinLop extends AppCompatActivity {
             public void onClick(View v) {
                 Dialog dlg_themlop = new Dialog(v.getContext());
                 dlg_themlop.setContentView(R.layout.fragment_themlop);
+                //EditText edt_tenlop =dlg_themlop.findViewById(R.id.edt_TenLop);
+                //final String tenlopmoi = edt_tenlop.getText().toString();
+                Button btn_themlopmoi = dlg_themlop.findViewById(R.id.btnThemMoiLop);
+                btn_themlopmoi.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        DatabaseHocSinhHelper db= new DatabaseHocSinhHelper(getBaseContext());
+                        db.insertLop("16123", "12C", "3", "2016 - 2017");
+                    }
+                });
                 dlg_themlop.show();
             }
         });

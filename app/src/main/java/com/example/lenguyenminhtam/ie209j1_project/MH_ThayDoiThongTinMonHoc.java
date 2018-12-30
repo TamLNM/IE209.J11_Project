@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +32,14 @@ public class MH_ThayDoiThongTinMonHoc extends AppCompatActivity {
             public void onClick(View v) {
                 Dialog dlg_themmonhoc = new Dialog(v.getContext());
                 dlg_themmonhoc.setContentView(R.layout.fragment_themmonhoc);
+                Button btn_themmhmoi = dlg_themmonhoc.findViewById(R.id.btnThemMoiMonHoc);
+                btn_themmhmoi.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        DatabaseHocSinhHelper db= new DatabaseHocSinhHelper(getBaseContext());
+                        db.insertMonHoc("506","Lịch sử");
+                    }
+                });
                 dlg_themmonhoc.show();
             }
         });
